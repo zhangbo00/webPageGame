@@ -31,7 +31,7 @@
 	</div>
 <!-- 这个是注册/登录窗口 -->
 <form method="post" action="">
-	<div id="shadown_bg">
+	<div class="shadown_bg">
 		<div id="lgn">
 			<div id="user_login">
 				<label>用户名：</label>

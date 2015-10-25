@@ -76,7 +76,7 @@
 	transition:all 1s;
 }
 /* =======这个是注册/登录窗口 ======*/
-#shadown_bg{
+.shadown_bg{
 	clear:both;
 	position:absolute;
 	top:0;
