@@ -1,9 +1,17 @@
 window.onload = function(){
-	
-	
-	var oBtn_login=document.getElementById('btn_login');
-	var shadown_bg = document.getElementById('shadown_bg');
+	var oBtn_login=document.getElementById('btn_login');									//µ¼º½À¸µÇÂ¼°´Å¥
+	var oBtn_close_login=document.getElementById('close_login');					//µÇÂ¼´°¿Ú¹Ø±Õ°´Å¥
+	var shadown_bg=document.getElementById('shadown_bg');
+
+<!-- ¹Ø±ÕµÇÂ¼ -->
+	oBtn_close_login.onclick=function(){
+		shadown_bg.style.display="none";
+	}
+<!-- ´ò¿ªµÇÂ¼ -->
 	oBtn_login.onclick=function(){
 		shadown_bg.style.display="block";
 	}
+
+
+
 }

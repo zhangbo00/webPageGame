@@ -40,7 +40,7 @@
 }
 
 #container .pull-center ul li{
-	width:140px;
+	width:18%;
 	height:70px;
 	line-height:70px;
 	list-style:none;
@@ -48,19 +48,22 @@
 	font-family:Microsoft Yahei;
 	font-size:19px;
 	color:#bfb7bb;
-	transition:all 1s;
+	transition:all 0.5s;
 
 }
 
 #container .pull-center ul li a{
-	width:140px;
+	width:100%;
 	height:70px;
 	display:inline-block;
 	color:#bfb7bb;
 	text-decoration:none;
 	transition:all 1s ;
+
 }
 #container .pull-center ul li:hover{
+	
+	
 	background:rgba(179,179,179,0.5);
 	border-radius:3px;
 }
@@ -117,6 +120,7 @@
 	border-radius:50%;
 	transition:all 0.4s;
 }
+
 #close_login:hover{
 	border:3px solid red;
 }
@@ -130,8 +134,19 @@
 	width:450px;
 	height:130px;
 	/* background:#cc3399; */
-	margin-top:20px;
+	margin-top:45px;
 	position:relative;
+}
+
+.u_lb{
+	font-size:23px;
+	font-family:Microsoft Yahei;
+	margin-bottom:5px;
+}
+.u_text{
+	width:200px;
+	height:40px;
+	font-size:20px;
 }
 .btns{
 	width:100%;
@@ -157,5 +172,12 @@
 	color:#000000;
 	text-decoration:none;
 }
-
+/* =======这个是注册/登录窗口 ======*/
+.banner{
+	width:100%;
+	height:530px;
+	margin:0 auto;
+	background:rgba(0,0,0,0.5);
+	margin-top:5px;
+}
 
