@@ -126,6 +126,7 @@
 .user_login{
 	width:450px;
 	height:130px;
+	/* background:#cc3399; */
 	margin-top:20px;
 	position:relative;
 }
