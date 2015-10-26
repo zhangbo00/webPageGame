@@ -48,6 +48,8 @@
 	font-family:Microsoft Yahei;
 	font-size:19px;
 	color:#bfb7bb;
+	transition:all 0.5s;
+
 }
 
 #container .pull-center ul li a{
@@ -60,6 +62,7 @@
 }
 #container .pull-center ul li:hover{
 	background:rgba(179,179,179,0.5);
+	border-radius:3px;
 }
 #container .pull-center ul li a:hover{
 	color:#037D57;
