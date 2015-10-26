@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纯CSS实现百度图片展示效果 - 懒人建站 - 51xuediannao.com</title>
+<meta name="keywords" content="网页特效,网页模板,导航菜单,焦点幻灯片,JS代码" />
+<meta name="description" content="懒人建站为您提供-HTML+CSS模板，JS广告代码，网页特效，导航菜单，焦点幻灯片代码，原创视频教程与网页模板和CSS技巧。" />
+
+<style type="text/css">
+
+#gallery {
+	width:750px;
+	height:550px;
+	margin:0 auto;
+	position:relative;
+	font-family:verdana, arial, sans-serif;
+	background:#fff;
+}
+
+#gallery #slides {position:absolute; right:10px; top:0; height:550px; width:92px; overflow:hidden; text-align:center; z-index:500;}
+#gallery #slides div {width:92px; height:550px; position:relative; padding-top:10px;}
+#gallery #slides div ul {padding:0; margin:0; list-style:none; width:92px; height:550px}
+#gallery #slides div ul li {float:left; padding:1px 0; width:92px; height:69px;}
+#gallery #slides div ul li a {display:block; width:92px; height:69px; float:left;}
+#gallery #slides div ul li a b {display:none;}
+#gallery #slides div ul li a.previous {background:url(double-click/up.png) no-repeat center center;}
+#gallery #slides div ul li a.next {background:url(double-click/down.png) no-repeat center center;}
+
+#gallery #slides div ul li a img {display:block; width:92px; height:69px; border:0;}
+#gallery #slides div ul li img.blank {margin:0 auto; padding-top:11px;}
+#gallery #slides div ul li a:focus {outline:0;}
+
+
+#gallery #fullsize {position:absolute; left:0; top:0; height:550px; width:750px; overflow:hidden; text-align:center; z-index:200;}
+
+#gallery #fullsize div {width:750px; height:700px; padding-top:70px; position:relative;}
+#gallery #fullsize div img {clear:both; display:block; margin:0 auto; border:1px solid #eee; width:480px; height:360px; position:relative; background:#fff; padding:10px;}
+#gallery #fullsize div h3 {padding:10px 0 0 0; margin:0; font-size:18px;}
+#gallery #fullsize div p {padding:5px 135px; margin:0; font-size:12px; line-height:18px;}
+
+</style>
+
+</head>
+<body>
+<div id="gallery">
+	<div id="slides">
+		<div id="slide1">
+			<ul>
+				<li><img class="blank" src="double-click/upx.png" alt="" /></li>
+				<li><a href="#pic1"><img src="double-click/pic1.jpg" alt="Winter branches" /></a></li>
+				<li><a href="#pic2"><img src="double-click/pic2.jpg" alt="Wading birds" /></a></li>
+				<li><a href="#pic3"><img src="double-click/pic3.jpg" alt="Bird on a post" /></a></li>
+				<li><a href="#pic4"><img src="double-click/pic4.jpg" alt="Early bloomers" /></a></li>
+				<li><a href="#pic5"><img src="double-click/pic5.jpg" alt="Green lizard" /></a></li>
+				<li><a href="#slide2" class="next"><b>Next</b></a></li>
+			</ul>
+		</div>
+		<div id="slide2">
+			<ul>
+				<li><a href="#slide1" class="previous"><b>Previous</b></a></li>
+				<li><a href="#pic2"><img src="double-click/pic2.jpg" alt="Wading birds" /></a></li>
+				<li><a href="#pic3"><img src="double-click/pic3.jpg" alt="Bird on a post" /></a></li>
+				<li><a href="#pic4"><img src="double-click/pic4.jpg" alt="Early bloomers" /></a></li>
+				<li><a href="#pic5"><img src="double-click/pic5.jpg" alt="Green lizard" /></a></li>
+				<li><a href="#pic6"><img src="double-click/pic6.jpg" alt="Feeding the birds" /></a></li>
+				<li><a href="#slide3" class="next"><b>Next</b></a></li>
+			</ul>
+		</div>
+		<div id="slide3">
+			<ul>
+				<li><a href="#slide2" class="previous"><b>Previous</b></a></li>
+				<li><a href="#pic3"><img src="double-click/pic3.jpg" alt="Bird on a post" /></a></li>
+				<li><a href="#pic4"><img src="double-click/pic4.jpg" alt="Early bloomers" /></a></li>
+				<li><a href="#pic5"><img src="double-click/pic5.jpg" alt="Green lizard" /></a></li>
+				<li><a href="#pic6"><img src="double-click/pic6.jpg" alt="Feeding the birds" /></a></li>
+				<li><a href="#pic7"><img src="double-click/pic7.jpg" alt="A group of butterflies" /></a></li>
+				<li><a href="#slide4" class="next"><b>Next</b></a></li>
+			</ul>
+		</div>
+		<div id="slide4">
+			<ul>
+				<li><a href="#slide3" class="previous"><b>Previous</b></a></li>
+				<li><a href="#pic4"><img src="double-click/pic4.jpg" alt="Early bloomers" /></a></li>
+				<li><a href="#pic5"><img src="double-click/pic5.jpg" alt="Green lizard" /></a></li>
+				<li><a href="#pic6"><img src="double-click/pic6.jpg" alt="Feeding the birds" /></a></li>
+				<li><a href="#pic7"><img src="double-click/pic7.jpg" alt="A group of butterflies" /></a></li>
+				<li><a href="#pic8"><img src="double-click/pic8.jpg" alt="Ladybirds" /></a></li>
+				<li><a href="#slide5" class="next"><b>Next</b></a></li>
+			</ul>
+		</div>
+		<div id="slide5">
+			<ul>
+				<li><a href="#slide4" class="previous"><b>Previous</b></a></li>
+				<li><a href="#pic5"><img src="double-click/pic5.jpg" alt="Green lizard" /></a></li>
+				<li><a href="#pic6"><img src="double-click/pic6.jpg" alt="Feeding the birds" /></a></li>
+				<li><a href="#pic7"><img src="double-click/pic7.jpg" alt="A group of butterflies" /></a></li>
+				<li><a href="#pic8"><img src="double-click/pic8.jpg" alt="Ladybirds" /></a></li>
+				<li><a href="#pic9"><img src="double-click/pic9.jpg" alt="Butterfly" /></a></li>
+				<li><a href="#slide6" class="next"><b>Next</b></a></li>
+			</ul>
+		</div>
+		<div id="slide6">
+			<ul>
+				<li><a href="#slide5" class="previous"><b>Previous</b></a></li>
+				<li><a href="#pic6"><img src="double-click/pic6.jpg" alt="Feeding the birds" /></a></li>
+				<li><a href="#pic7"><img src="double-click/pic7.jpg" alt="A group of butterflies" /></a></li>
+				<li><a href="#pic8"><img src="double-click/pic8.jpg" alt="Ladybirds" /></a></li>
+				<li><a href="#pic9"><img src="double-click/pic9.jpg" alt="Butterfly" /></a></li>
+				<li><a href="#pic10"><img src="double-click/pic10.jpg" alt="Trees in the mist" /></a></li>
+				<li><img class="blank" src="double-click/downx.png" alt="" /></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="fullsize">
+		<div id="pic1">
+			<img src="double-click/pic1.jpg" alt="Winter branches" />
+      <h3>懒人建站</h3>
+      <p><a href="http://51xuediannao.com" target="_blank">懒人建站</a> - 解放出你的部分写代码时间来思考更高层次的设计</p>
+		</div>
+		<div id="pic2">
+			<img src="double-click/pic2.jpg" alt="Wading birds" />
+      <h3>JS代码</h3>
+      <p><a href="http://51xuediannao.com/JS" target="_blank">JS代码</a> JS广告代码-js代码大全-js特效代码_懒人建站</p>
+		</div>
+		<div id="pic3">
+			<img src="double-click/pic3.jpg" alt="Bird on a post" />
+      <h3>广告代码</h3>
+      <p><a href="http://51xuediannao.com/JS/AD" target="_blank">广告代码</a>JS广告代码,JS广告代码大全,js特效代码 - 懒人建站-51xuediannao.com</p>
+		</div>
+		<div id="pic4">
+			<img src="double-click/pic4.jpg" alt="Early bloomers" />
+      <h3>导航菜单</h3>
+      <p><a href="http://51xuediannao.com/JS/nav" target="_blank">导航菜单</a>导航菜单-导航菜单代码-导航菜单特效_懒人建站</p>
+		</div>
+		<div id="pic5">
+			<img src="double-click/pic5.jpg" alt="Green lizard" />
+      <h3>CSS技巧</h3>
+      <p><a href="http://51xuediannao.com/jiqiao/css/" target="_blank">CSS技巧</a>CSS技巧-css教程-css模板_懒人建站</p>
+		</div>
+		<div id="pic6">
+			<img src="double-click/pic6.jpg" alt="Feeding the birds" />
+      <h3>焦点幻灯片</h3>
+      <p><a href="http://51xuediannao.com/JS/texiao" target="_blank">网页特效</a>焦点图代码-jquery焦点图-js焦点图-flash焦点图_懒人建站</p>
+		</div>
+		<div id="pic7">
+			<img src="double-click/pic7.jpg" alt="A group of butterflies" />
+      <h3>网页特效</h3>
+      <p><a href="http://51xuediannao.com/JS/texiao" target="_blank">网页特效</a> - 懒人建站-网页特效代码,网页特效大全,网页特效代码下载</p>
+		</div>
+		<div id="pic8">
+			<img src="double-click/pic8.jpg" alt="Ladybirds" />
+      <h3>懒人建站</h3>
+      <p><a href="http://51xuediannao.com" target="_blank">懒人建站</a> - 解放出你的部分写代码时间来思考更高层次的设计</p>
+		</div>
+		<div id="pic9">
+			<img src="double-click/pic9.jpg" alt="Butterfly" />
+      <h3>导航菜单</h3>
+      <p><a href="http://51xuediannao.com/JS/nav" target="_blank">导航菜单</a>导航菜单-导航菜单代码-导航菜单特效_懒人建站</p>
+		</div>
+		<div id="pic10">
+			<img src="double-click/pic10.jpg" alt="Trees in the mist" />
+      <h3>CSS技巧</h3>
+      <p><a href="http://51xuediannao.com/jiqiao/css/" target="_blank">CSS技巧</a>CSS技巧-css教程-css模板_懒人建站</p>
+		</div>
+	</div>
+</div>
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--下面只是说明与程序代码无关-->
+<div style="width:95%; height:auto; display:block; margin:0 auto; margin-top:30px; font-size:10pt; line-height:150%;">
+<span>本代码由<a href="http://www.51xuediannao.com" style="color:#F00;">懒人建站网 收集整理 我要学电脑.COM →51xuediannao.com</a> </span><br>
+<a href="http://www.51xuediannao.com">懒人建站 http://www.51xuediannao.com</a><br /><br/>
+<span>我们为您提供-
+<a href="http://www.51xuediannao.com/html+css/">HTML+CSS模板</a>，
+<a href="http://www.51xuediannao.com/js/">JS代码</a>，
+<a href="http://www.51xuediannao.com/JS/texiao/">网页特效</a>，
+<a href="http://www.51xuediannao.com/JS/nav/">导航菜单</a>，
+<a href="http://www.51xuediannao.com/JS/Slide/">焦点幻灯片<a>，
+<a href="http://www.51xuediannao.com/JS/show/">网页欣赏</a>和
+<a href="http://www.51xuediannao.com/JS/jiqiao/css/">CSS技巧</a>；</span><br />
+<span>懒人建站只收录实用和能提高用户体验的代码</span><br />
+<span>我们只想解放出你的部分写代码时间来思考更高层次的设计，而不是要你懒惰、拼凑。</span>
+</div>
+
+
+
+
+
+<center>
+<script type='text/javascript'> 
+cpro_client='lanrennet2010_cpr';
+cpro_at='text'; 
+cpro_161=4; 
+cpro_flush=4; 
+cpro_w=960; 
+cpro_h=90; 
+cpro_template='text_default_960_90'; 
+cpro_cbd='#86AC5F'; 
+cpro_cbg='#242E37'; 
+cpro_ctitle='#6CA7C7'; 
+cpro_cdesc='#cfe0ee'; 
+cpro_curl='#008000'; 
+cpro_cflush='#ff7b0e'; 
+cpro_uap=1;
+cpro_cad=1;
+</script>
+<script language='JavaScript' type='text/javascript' src='http://cpro.baidu.com/cpro/ui/cp.js'></script>
+</center>
+
+<div id="tj" style="display:none;"><script src="http://s9.cnzz.com/stat.php?id=1015985&web_id=1015985" language="JavaScript" charset="gb2312"></script></div>
+</body>
+</html>
