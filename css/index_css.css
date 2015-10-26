@@ -1,0 +1,99 @@
+*{margin:0;padding:0}
+/* =========导航========== */
+#header{
+	width:100%;
+	height:70px;
+	box-shadow: 0px 1px 8px #888888;
+}
+#container{
+	width:1100px;
+	height:70px;
+	margin: 0 auto;
+}
+#container .pull-left{
+	width:190px;
+	height:70px;
+	/* background:red; */
+	float:left;
+	margin:0 10px;
+}
+#container .pull-center{
+	width:700px;
+	height:70px;
+	/* background:#ff0099; */
+	margin:0 10px 0 0;
+	float:left;
+}
+#container .pull-right{
+	width:170px;
+	height:70px;
+	/* background:#000099; */
+	margin-left: 10px;
+	text-align:center;
+	float:left;
+}
+#container .pull-center ul{
+	width:700px;
+	height:70px;
+	text-align:center;
+	padding:0 15px;
+}
+
+#container .pull-center ul li{
+	width:140px;
+	height:70px;
+	line-height:70px;
+	list-style:none;
+	float:left;
+	font-family:Microsoft Yahei;
+	font-size:19px;
+	color:#bfb7bb;
+}
+
+#container .pull-center ul li a{
+	color:#bfb7bb;
+	text-decoration:none;
+	transition:all 1s ;
+}
+#container .pull-center ul li a:hover{
+	color:#037D57;
+	text-decoration:none;
+}
+.btn_login_text{
+	margin-right:-2px;
+	font-size:16px;
+	font-family:Microsoft Yahei;
+	color:#4f464d;
+	line-height:70px;
+	cursor:pointer;
+}
+#btn_login{
+	/* cursor:pointer; */
+	font-size:16px;
+	font-family:Microsoft Yahei;
+	color:#4f464d;
+	line-height:70px;
+	transition:all 1s;
+}
+/* =======这个是注册/登录窗口 ======*/
+#shadown_bg{
+	clear:both;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.3);
+	display:none;
+}
+#lgn{
+	width:450px;
+	height:350px;
+	position:fixed;	
+	left:0px;right:0px;
+	margin-top:150px;
+	margin-left:auto;
+	margin-right:auto;
+	background:red;
+
+}
