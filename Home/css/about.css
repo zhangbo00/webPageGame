@@ -1,6 +1,15 @@
-body {
-  position: relative;
+#navbar-example{
+	position: relative;
+	width: 800px;
+	left: 20%;
+	top: 50px;
 }
-li{
-	display:block;
+.scrollspy-example{
+	position: relative;
+	height: 470px;
+	margin-top: 10px;
+	overflow: auto;
+}
+h4{
+	line-height: 50px;
 }
