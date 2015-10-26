@@ -35,7 +35,7 @@
 		<div id="lgn">
 		<div id="close_login"></div>
 		<span class="login_title">用户登录</span>
-			<div class="user_login">
+			<div id="user_login">
 				
 				<label for="user_name" class="u_lb">用户名：</label>
 				<input id="user_name" name="user_name" class="u_text"/><br/>
