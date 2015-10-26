@@ -27,6 +27,7 @@
 				<span class="btn_login_text" id="btn_login">登录</span>
 			</div>
 		</div>
+<<<<<<< HEAD
 	</div>
 
 
@@ -37,7 +38,11 @@
 
 <div class="hot_info">
 	<div class="hot_info_wrap">
-	
+		<ul id="ul_info">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
 	</div>
 </div>
 <div style="width:100%;

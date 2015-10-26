@@ -1,5 +1,5 @@
 *{margin:0;padding:0}
-/* =========µ¼º½========== */
+/* =========ÂµÂ¼ÂºÂ½========== */
 #header{
 	width:100%;
 	height:70px;
@@ -87,7 +87,7 @@
 	line-height:70px;
 	transition:all 1s;
 }
-/* =======Õâ¸öÊÇ×¢²á/µÇÂ¼´°¿Ú ======*/
+/* =======Ã•Ã¢Â¸Ã¶ÃŠÃ‡Ã—Â¢Â²Ã¡/ÂµÃ‡Ã‚Â¼Â´Â°Â¿Ãš ======*/
 #shadown_bg{
 	clear:both;
 	position:absolute;
@@ -185,11 +185,24 @@
 	height:400px;
 	background:rgba(255,0,0,0.2);
 	margin-top:2px;
-	margin-bottom:40px;
 }
 .hot_info_wrap{
-	width:85%;
+	width:90%;
 	height:400px;
 	margin:0 auto;
 	background:rgba(0,255,0,0.2);
+}
+
+/* =======Õâ¸öÊÇHOTÐÅÏ¢ ======*/
+#ul_info{
+	width:100%;
+	height:400px;
+	background:rgba(0,0,255,0.2);
+}
+#ul_info li{
+	width:33%;
+	height:400px;
+	background:rgba(0,255,255,0.2);
+	float:left;
+	margin-left:3px;
 }
