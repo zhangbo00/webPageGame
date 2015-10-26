@@ -4,5 +4,5 @@ $('[data-spy="scroll"]').each(function () {
   var $spy = $(this).scrollspy('refresh')
 });
 $('#myScrollspy').on('activate.bs.scrollspy', function () {
-  // do something…
+  alert(123);
 })
