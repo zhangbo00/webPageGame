@@ -1,6 +1,11 @@
-body {
-  position: relative;
+#navbar-example{
+	position: relative;
+	width: 800px;
+	height: 270px;
 }
-li{
-	display:block;
+.scrollspy-example{
+	position: relative;
+	height: 200px;
+	margin-top: 10px;
+	overflow: auto;
 }
