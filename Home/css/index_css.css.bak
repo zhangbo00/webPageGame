@@ -1,5 +1,8 @@
 *{margin:0;padding:0}
-/* =========µ¼º½========== */
+body{
+	backgroundP:
+}
+/* =========这个是导航========== */
 #header{
 	width:100%;
 	height:70px;
@@ -87,7 +90,7 @@
 	line-height:70px;
 	transition:all 1s;
 }
-/* =======Õâ¸öÊÇ×¢²á/µÇÂ¼´°¿Ú ======*/
+/* =======这个是登录 ======*/
 #shadown_bg{
 	clear:both;
 	position:absolute;
@@ -147,6 +150,7 @@
 	width:200px;
 	height:40px;
 	font-size:20px;
+	font-family:Microsoft Yahei;
 }
 .btns{
 	width:100%;
@@ -172,37 +176,71 @@
 	color:#000000;
 	text-decoration:none;
 }
-/* =======�����ע��/��¼���� ======*/
+/* =======这个是轮播 ======*/
 .banner{
 	width:100%;
 	height:530px;
 	margin:0 auto;
-	background:rgba(0,0,0,0.2);
-	margin-top:0px;
+	background:#ccc;
 }
+/* =======这个是HOT信息 ======*/
 .hot_info{
 	width:100%;
-	height:400px;
-	background:rgba(255,0,0,0.2);
-	margin-top:2px;
+	height:450px;
+	background:#ccc;
+	margin-top:20px;
 }
 .hot_info_wrap{
 	width:90%;
-	height:400px;
+	height:100%;
 	margin:0 auto;
 	background:rgba(0,255,0,0.2);
 }
-
-/* =======�����HOT��Ϣ ======*/
 #ul_info{
 	width:100%;
-	height:400px;
+	height:100%;
 	background:rgba(0,0,255,0.2);
 }
 #ul_info li{
 	width:33%;
-	height:400px;
+	height:100%;
 	background:rgba(0,255,255,0.2);
 	float:left;
 	margin-left:4px;
+}
+/* =======这个是热门资源 ======*/
+.res_wrap{
+	width:100%;
+	height:550px;
+	background:rgba(0,0,0,0.2);
+	margin-top:20px;
+}
+#res_left{
+	width:48%;
+	height:100%;
+	margin-left:6%;
+	background:rgba(255,0,0,0.2);
+	float:left;
+}
+#res_right{
+	display:inline-block;
+	width:35%;
+	height:100%;
+	margin-right:6%;
+	background:rgba(255,0,0,0.2);
+	float:right;
+}
+/* 这个是时间 */
+.time_wrap{
+	width:100%;
+	height:250px;
+	background:#ccc;
+	margin-top:20px;
+}
+/* 这个是页脚 */
+.footer{
+	width:100%;
+	height:250px;
+	background:#ccc;
+	margin-top:20px;
 }
