@@ -39,9 +39,9 @@
 <div class="hot_info">
 	<div class="hot_info_wrap">
 		<ul id="ul_info">
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
+			<li>热点一</li>
+			<li>热点二</li>
+			<li>热点三</li>
 		</ul>
 	</div>
 </div>

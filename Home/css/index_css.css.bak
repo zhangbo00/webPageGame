@@ -178,7 +178,7 @@
 	height:530px;
 	margin:0 auto;
 	background:rgba(0,0,0,0.2);
-	margin-top:2px;
+	margin-top:0px;
 }
 .hot_info{
 	width:100%;
@@ -204,5 +204,5 @@
 	height:400px;
 	background:rgba(0,255,255,0.2);
 	float:left;
-	margin-left:3px;
+	margin-left:4px;
 }
