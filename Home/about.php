@@ -12,6 +12,15 @@
     <script type="text/javascript" src="js/about.js"></script>
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
+	<?php 
+		require ('../public/mysql_pdo.php');	//连接数据库
+/*		$str = "select * from about;";
+	    foreach ( $pdo-> query ( $str ) as  $row ) {
+        print  $row [ 'id' ] .  " : " ;
+        echo $row['title']."<br>";
+    }
+*/
+	?>
 <!--
   <div id="navbar-example">
     <ul class="nav nav-tabs" role="tablist">
