@@ -33,6 +33,5 @@
 	</div>
 </body>
 	<script type="text/javascript" src="../public/jquery-1.10.2.min.js"></script>
-	
 	<script type="text/javascript" src="js/messageBoard.js"></script>
 </html>
