@@ -6,10 +6,16 @@
 }
 .scrollspy-example{
 	position: relative;
-	height: 470px;
+	height: 500px;
 	margin-top: 10px;
 	overflow: auto;
 }
 h4{
 	line-height: 50px;
+}
+nav{
+	position: absolute;
+	width: 800px;
+	top:30px;
+	left: 20%
 }

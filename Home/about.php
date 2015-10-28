@@ -30,8 +30,7 @@
     </ul>
     <div>
   -->
-  <div class="bs-example" data-example-id="embedded-scrollspy" id="navbar-example">
-    <nav id="navbar-example2" class="navbar navbar-default navbar-static">
+      <nav id="navbar-example2" class="navbar navbar-default navbar-static">
       <div class="container-fluid">
         <div class="navbar-header">
           <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-scrollspy">
@@ -60,6 +59,7 @@
         </div>
       </div>
     </nav>
+  <div class="bs-example" data-example-id="embedded-scrollspy" id="navbar-example">
     <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example">
       <h4 id="profile" class="bg-primary">公司简介</h4>
       <div class="jumbotron">
