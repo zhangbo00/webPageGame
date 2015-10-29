@@ -1,5 +1,5 @@
 <?php
-	class database
+	class Database
 	{
 		private $hostname;
 		private $user;
@@ -14,7 +14,6 @@
 			$this->user = $dbconfig['user'];
 			$this->pass = $dbconfig['pass'];
 			$this->dbname = $dbconfig['dbname'];
-			$this->linkflg = $dbconfig['linkflg'];
 			$this->charset = $dbconfig['charset'];
 			$this->linkflag = mysql_connect($this->hostname, $this->user, $this->dbname);
 			mysql_select_db($this->dbname,$this->linkflag) or die($this->error());

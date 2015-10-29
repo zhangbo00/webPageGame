@@ -15,6 +15,31 @@
 <!-- ============================= -->
 	<div class="main">
 		<div class="container">
+
+			<?php
+				require_once('../public/mysql_pdo.php');
+				// $answer = $pdo->query('select');
+					$result = $pdo->query('select user.id,message.id as m_id,message.content,message.time,message.reply,user.nick,user.head_img,reply.content from message left join user on message.u_id=user.id left join reply on message.id=reply.m_id GROUP BY message.id');
+				// $result = $pdo->query('select message.id,message.content,message.time,message.reply,user.nick,user.head_img from message left join user on message.u_id=user.id  where message.status=1 order by message.time desc limit 50');
+				while($row = $result->fetch()){
+					var_dump($row);
+					$html = '<div class="message_item panel panel-default">';
+						$html.='<div class="message_info panel-heading">';
+							$html.=$row['nick'].'<img class=head_img src'.$row['head_img'].'>'.date('y-m-d h:i:s',$row['time']);
+						$html.='</div>';
+						$html.='<div class="reply panel-body">';
+							$html.='<xmp class=content>'.$row['content'].'</xmp>';
+						$html.='</div>';
+					$html.='</div>';
+					if ($row['reply']==1) {
+
+					}
+					echo $html;
+					// var_dump($row);
+				}
+			?>
+
+
 			<div class="message_item panel panel-default">
 				<div class="message_info panel-heading">
 					留言区

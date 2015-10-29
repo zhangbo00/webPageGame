@@ -7,6 +7,7 @@
 	const DBUSER = 'root';
 	const DBPW = '';
 	const DBNAME = 'geekstudio';
+	const DBCHARSET = 'utf-8';
 /*	$mydbhost = 'localhost';
 	$mydbuser = 'user';
 	$mydbpw = '';
