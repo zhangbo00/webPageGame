@@ -14,10 +14,10 @@
 	//设置编码方式
 	$pdo->query("SET NAMES utf8");
 
-	$str = "select * from about;";
+/*	$str = "select * from about;";
 	    foreach ( $pdo-> query ( $str ) as  $row ) {
         print  $row [ 'id' ] .  " : " ;
         echo $row['title']."<br>";
-    }
+    }*/
 
  ?>

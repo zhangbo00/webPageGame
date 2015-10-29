@@ -12,6 +12,15 @@
     <script type="text/javascript" src="js/about.js"></script>
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
+	<?php 
+		require ('../public/mysql_pdo.php');	//连接数据库
+/*		$str = "select * from about;";
+	    foreach ( $pdo-> query ( $str ) as  $row ) {
+        print  $row [ 'id' ] .  " : " ;
+        echo $row['title']."<br>";
+    }
+*/
+	?>
 <!--
   <div id="navbar-example">
     <ul class="nav nav-tabs" role="tablist">
@@ -21,8 +30,7 @@
     </ul>
     <div>
   -->
-  <div class="bs-example" data-example-id="embedded-scrollspy" id="navbar-example">
-    <nav id="navbar-example2" class="navbar navbar-default navbar-static">
+      <nav id="navbar-example2" class="navbar navbar-default navbar-static">
       <div class="container-fluid">
         <div class="navbar-header">
           <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-scrollspy">
@@ -51,6 +59,7 @@
         </div>
       </div>
     </nav>
+  <div class="bs-example" data-example-id="embedded-scrollspy" id="navbar-example">
     <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example">
       <h4 id="profile" class="bg-primary">公司简介</h4>
       <div class="jumbotron">
