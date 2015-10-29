@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Geek Studio</title>
   <link rel="stylesheet" href="css/index_css.css">
+  <style type="text/css" id="css"></style>
 
  </head>
  <body>
@@ -31,7 +32,15 @@
 
 <!-- 这里要放的是轮播 -->
 <div class="banner" style="clear:both">
-	这里放轮播
+	<div id="banner">
+		<ul id="ul"></ul>
+		<ol id="ol">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ol>
+	</div>
 </div>
 
 <div class="hot_info">
