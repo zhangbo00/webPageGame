@@ -12,7 +12,6 @@
 
 	//设置编码方式
 	$pdo->query("SET NAMES utf8");
-<<<<<<< HEAD
 /*
 	$str = "select * from message;";
 	    foreach ( $pdo-> query ( $str ) as  $row ) {

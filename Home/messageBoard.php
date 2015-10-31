@@ -12,7 +12,6 @@
 		require_once('public/header.html');
 	?>
 
-<!-- ============================= -->
 	<div class="main">
 		<div class="container">
 
