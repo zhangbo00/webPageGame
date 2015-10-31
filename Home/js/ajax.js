@@ -38,3 +38,6 @@ function ajax(url, fnSucc, fnFaild)
 		}
 	};
 }
+function fnFaild () {
+		
+}

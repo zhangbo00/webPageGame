@@ -7,7 +7,7 @@
 
 		// $receive['u_id'] =  
 		// $_POST['u_id'];
-		$receive['content'] = $_POST['content'];
+		// $receive['content'] = $_POST['content'];
 		if (function_exists($action)) {
 			$action($receive);
 		} else {
@@ -16,14 +16,7 @@
 	}
 	function msgSubmit($receive)
 	{	
-		try{
-			$dsn = 'mysql:host=localhost;dbname=geekstudio';
-			$username = 'root';
-			$password = '';
-			$pdo = new PDO($dsn, $username, $password);
-		} catch (PDOException $e) {
-			$ajax['message'] = $e->getMessage();
-		}
+		require_once('../public/mysql_pdo.php');
 		$time = time();
 		$u_id = 1;
 		$stmt = $pdo->prepare("insert into message (u_id,content,time) values (?,?,?)");

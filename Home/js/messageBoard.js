@@ -14,4 +14,20 @@ $(function () {
 			}
 		});
 	});
+/*	$(".message_item li,.message_item button").mouseover(function () {
+		
+	}).mouseout(function () {
+		
+	}); */
+	$(".message_item .reply").click(function() {
+		// console.log(($(this).next()).next());
+		($(this).next('.reply_content')).slideToggle();
+		// $(this).next('textarea').slideDown();
+		// $("p").slideToggle("slow");
+	});
+	$(".reply_content .submit").click(function () {
+		var message = $(this).prev('textarea').val();
+		console.log($(this).parent('.message_item'));
+		// console.log($(this).parent('.message_item').attr('message-id'));
+	})
 })

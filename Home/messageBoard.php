@@ -17,47 +17,54 @@
 		<div class="container">
 
 			<?php
-				require_once('../public/mysql_pdo.php');
-				// $answer = $pdo->query('select');
-					$result = $pdo->query('select user.id,message.id as m_id,message.content,message.time,message.reply,user.nick,user.head_img,reply.content from message left join user on message.u_id=user.id left join reply on message.id=reply.m_id GROUP BY message.id');
-				// $result = $pdo->query('select message.id,message.content,message.time,message.reply,user.nick,user.head_img from message left join user on message.u_id=user.id  where message.status=1 order by message.time desc limit 50');
-				while($row = $result->fetch()){
-					var_dump($row);
-					$html = '<div class="message_item panel panel-default">';
-						$html.='<div class="message_info panel-heading">';
-							$html.=$row['nick'].'<img class=head_img src'.$row['head_img'].'>'.date('y-m-d h:i:s',$row['time']);
+				include('../public/mysql_pdo.php');
+				function getMessage()
+				{
+					$result=getItem();
+					asort($result);
+					foreach ($result as $key => $value) {
+						$html='<div class="message_item panel panel-default" message-id='.$value['id'].'>';
+							$html.='<div class="message_info panel-heading">';
+								$html.=$value['nick'].'<img class=head_img src'.$value['head_img'].'>'.date('y-m-d h:i:s',$value['time']);
+							$html.='</div>';
+							$html.='<div class="reply panel-body">';
+								$html.='<xmp class=content>body'.$value['content'].':'.$value['root'].'</xmp>';
+								$html.='<button type="button" class="reply btn btn-default">回复</button>';
+								$html.='<div class="reply_content">';
+									$html.='<textarea></textarea>';
+									$html.='<button type="button" class="submit btn btn-default" message-id='.$value['id'].'>提交</button>';
+								$html.='</div>';
+							$html.='</div>';
+							$html.='<ul class="list-group">';
+							if ($anwser=getItem($value['id'],3)) {
+								foreach ($anwser as $key => $item) {
+									$html.='<li class="list-group-item">';
+									$html.=$item['nick'].$item['content'].':'.$item['root'];
+									$html.='<button type="button" class="reply btn btn-default">回复</button>';
+									$html.='<div class="reply_content">';
+										$html.='<textarea></textarea>';
+										$html.='<button type="button" class="submit btn btn-default" message-id='.$item['id'].'>提交</button>';
+									$html.='</div>';
+									$html.='</li>';
+								}
+							}
+							$html.='</ul>';
 						$html.='</div>';
-						$html.='<div class="reply panel-body">';
-							$html.='<xmp class=content>'.$row['content'].'</xmp>';
-						$html.='</div>';
-					$html.='</div>';
-					if ($row['reply']==1) {
-
+						echo $html;
 					}
-					echo $html;
-					// var_dump($row);
 				}
+				function getItem($root=0,$limit=20)
+				{
+					global $pdo;
+					$sql = "select m.id,m.p_id,m.root,m.content,m.time,m.reply,u.nick,u.head_img from message as m left join user as u on m.u_id=u.id where m.status=1 and root=$root order by time desc limit $limit";
+					$result = $pdo->query($sql);
+					$messages=$result->fetchAll();
+					return $messages;
+				}
+				getMessage(0,10);
 			?>
-
-
-			<div class="message_item panel panel-default">
-				<div class="message_info panel-heading">
-					留言区
-				</div>
-				<div class="reply panel-body">
-					互相回复区
-					更多内容
-				</div>
-				<ul class="list-group">
-				  <li class="list-group-item">Cras justo odio</li>
-				  <li class="list-group-item">Dapibus ac facilisis in</li>
-				  <li class="list-group-item">Morbi leo risus</li>
-				  <li class="list-group-item">Porta ac consectetur ac</li>
-				  <li class="list-group-item">Vestibulum at eros</li>
-				</ul>
-			</div>
 			<div class="message">
-				<textarea style="width: 100%;height: 100px; resize: none" name="" plcaeholder"请输入"></textarea>
+				<textarea style="width: 100%;height: 100px; resize: none" name="" plcaeholder"ÇëÊäÈë"></textarea>
 				<button class="btn btn-info" type="button">留言</button>		
 			</div>
 		</div>
