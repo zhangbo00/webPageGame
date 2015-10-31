@@ -10,6 +10,8 @@
     <!--自我独有引用部分-->
     <link rel="stylesheet" href="css/about.css">
     <script type="text/javascript" src="js/about.js"></script>
+    <link rel="shortcut icon" href="http://static.tmimgcdn.com/img/favicon.ico">
+    <link rel="icon" href="http://static.tmimgcdn.com/img/favicon.ico">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 	<?php 
@@ -21,44 +23,20 @@
     }
 */
 	?>
-    <div id="about_header">
-      <nav id="navbar-example2" class="navbar navbar-default navbar-static header-nav">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-scrollspy">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Geek Studio</a>
-        </div>
-        <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy ">
-          <ul class="nav navbar-nav">
-            <li><a href="#profile">公司简介</a></li>
-            <li><a href="#culture">文化</a></li>
-            <li><a href="#history">历程</a></li>
-            <li><a href="#founder">Founder</a></li>
-            <!--  //下级菜单响应
-            <li class="dropdown">
-              <a href="#" id="navbarDrop1" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Founder <span class="caret"></span></a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDrop1">
-                <li><a href="#one">Mr. Liu</a></li>
-                <li><a href="#two">Mr. Wang</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#three">Mr. Zhang</a></li>
-              </ul>
-            </li>
-            -->
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
-  <div class="bs-example" data-example-id="embedded-scrollspy" id="navbar-example">
-    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example">
-      <div id="pro">
-        <h4 id="profile" class="bg-primary">公司简介</h4>
+  <div>
+    <!-- Nav tabs -->
+    <div id="about_title">
+      <ul id="founder" class="nav nav-tabs" >
+        <li role="presentation" class="active"><a id="myTabs" href="#title_1" aria-controls="home" role="tab" data-toggle="tab">公司简介</a></li>
+        <li role="presentation"><a href="#title_2" aria-controls="messages" role="tab" data-toggle="tab">企业文化</a></li>
+        <li role="presentation"><a href="#title_3" aria-controls="settings" role="tab" data-toggle="tab">发展历程</a></li>
+        <li role="presentation"><a href="#title_4" aria-controls="settings" role="tab" data-toggle="tab">成员介绍</a></li>
+      </ul>
+    </div>
+    <!-- Tab panes -->
+    <div id="about_content" class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="title_1">
+        <h4 id="one" class="bg-danger">公司简介</h4>
         <div class="jumbotron logoba logobox">
           <img src="images/logo_v.jpg" alt="">
         </div>
@@ -67,7 +45,7 @@
           <p>
             小米公司正式成立于2010年4月，是一家专注于高端智能手机、互联网电视以及智能家居生态链建设的创新型科技企业。
           </p>
-          <p>
+          <p> 
             “让每个人都可享受科技的乐趣”是小米公司的愿景。小米公司应用了互联网开发模式开发产品的模式，用极客精神做产品，用互联网模式干掉中间环节，致力于让全球每个人，都能享用来自中国的优质科技产品。
           </p>
           <p>
@@ -79,86 +57,48 @@
           <p>
             小米生态链建设将秉承开放、不排他、非独家的合作策略，和业界合作伙伴一起推动智能生态链建设。
           </p>
-        </div>                
+        </div>
       </div>
-      <h4 id="culture" class="bg-primary">文化</h4>
-      <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. gfLo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
-      <h4 id="history" class="bg-primary">历程</h4>
-      <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. gfLo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
-
-      <div>
-        <!-- Nav tabs -->
-        <ul id="founder" class="nav nav-tabs" >
-          <li role="presentation" class="active"><a id="myTabs" href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+      <div role="tabpanel" class="tab-pane" id="title_2">
+        <h4 id="two" class="bg-danger">企业文化</h4>
+        <h4 id="culture" class="bg-primary">文化</h4>
+        <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. gfLo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="title_3">
+        <h4 id="three" class="bg-danger">发展历程</h4>
+        <h4 id="history" class="bg-primary">历程</h4>
+        <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. gfLo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="title_4">
+        <h4 id="three" class="bg-danger">成员介绍</h4>
+        <ul class="about_members">
+          <li>
+            <div><img src="images/sy_50382172896.jpg" alt=""></div>
+            <div>
+              <h2>姓名</h2>
+              <h3>工作</h3>
+              <p>个人简介</p>
+            </div>
+          </li>
+          <li>
+            <div><img src="images/sy_50382172896.jpg" alt=""></div>
+            <div>
+              <h2>姓名</h2>
+              <h3>工作</h3>
+              <p>个人简介</p>
+            </div>
+          </li>
+          <li>
+            <div><img src="images/sy_50382172896.jpg" alt=""></div>
+            <div>
+              <h2>姓名</h2>
+              <h3>工作</h3>
+              <p>个人简介</p>
+            </div>
+          </li>
         </ul>
-
-        <!-- Tab panes -->
-        <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="home">
-            <h4 id="one" class="bg-danger">Mr. Liu</h4>
-            <p>Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh mi, velit ea sunt next level locavore single-origin coffee in magna veniam. High life id vinyl, echo park consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex in, sustainable delectus consectetur fanny pack iphone.</p>
-            <p>Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh mi, velit ea sunt next level locavore single-origin coffee in magna veniam. High life id vinyl, echo park consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex in, sustainable delectus consectetur fanny pack iphone.</p>
-          </div>
-          <div role="tabpanel" class="tab-pane" id="messages">
-            <h4 id="two" class="bg-danger">Mr. Wang</h4>
-            <p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p>
-          </div>
-          <div role="tabpanel" class="tab-pane" id="settings">
-            <h4 id="three" class="bg-danger">Mr. Zhang</h4>
-            <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
-          </div>
-        </div>
       </div>
     </div>
-
-
-  </div><!-- /example -->
-  
-
-
-<!--  //手风琴效果
-  <div style="width: 800px;">
-    <div class="panel-group" id="accordion2">
-        <div class="panel panel-default">
-            <div class="panel-heading" data-toggle="collapse"
-                data-parent="#accordion2" href="#collapseOne">
-                <a class="accordion-toggle">Java</a>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse"
-                style="height: 0px;">
-                <div class="panel-body">
-                    <h1>JAVA</h1>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" data-toggle="collapse"
-                data-parent="#accordion2" href="#collapseTwo">
-                <a class="accordion-toggle">数据库</a>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse"
-                style="height: 0px;">
-                <div class="panel-body">
-                  <h1>数据库</h1>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" data-toggle="collapse"
-                data-parent="#accordion2" href="#collapseThree">
-                <a class="accordion-toggle">技术前沿</a>
-            </div>
-            <div id="collapseThree" class="panel-collapse in"
-                style="height: 0px;">
-                <div class="panel-body">
-                    <h1>技术前沿</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div> 
-  -->
+  </div>
 </body>
 </html>
