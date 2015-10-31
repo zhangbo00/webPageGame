@@ -47,9 +47,26 @@
 <div class="hot_info">
 	<div class="hot_info_wrap">
 		<ul id="ul_info">
-			<li>热点一</li>
-			<li>热点二</li>
-			<li>热点三</li>
+			<li>
+				<div class="hot_info">
+					<a href=""></a>
+					<div class="hot_title">Title</div>
+					<img src="images/hot1.png"/>
+					<div class="hot_content"><span>Content</span></div>
+				</div>
+			</li>
+			<li><div class="hot_info">
+					<a href=""></a>
+					<div class="hot_title">Title</div>
+					<img src="images/hot1.png"/>
+					<div class="hot_content"><span>Content</span></div>
+				</div></li>
+			<li><div class="hot_info">
+					<a href=""></a>
+					<div class="hot_title">Title</div>
+					<img src="images/hot1.png"/>
+					<div class="hot_content"><span>Content</span></div>
+				</div></li>
 		</ul>
 	</div>
 </div>
