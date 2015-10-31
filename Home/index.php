@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Geek Studio</title>
   <link rel="stylesheet" href="css/index_css.css">
-  <link rel="stylesheet" href="css/zns_style.css" type="text/css"  />
+  <link rel="stylesheet" href="css/clock.css" type="text/css"  />
   <style type="text/css" id="css"></style>
 
  </head>
@@ -17,11 +17,11 @@
 			</div>
 			<div class="pull-center">
 				<ul>
-					<li><a href="www.baidu.com">首页</a></li>
+					<li><a href="index.php">首页</a></li>
 					<li><a href="www.baidu.com">关于我们</a></li>
-					<li><a href="www.baidu.com">相册</a></li>
+					<li><a href="photo_album.php">相册</a></li>
 					<li><a href="www.baidu.com">留言</a></li>
-					<li><a href="www.baidu.com">联系我们</a></li>
+					<li><a href="contact_us.php">联系我们</a></li>
 				</ul>
 			</div>
 			<div class="pull-right">
@@ -73,7 +73,9 @@
 <!-- 这个是用来放资源和文章用的 -->
 <div class="res_wrap">
 	<div id="res_left">资源（选项卡）</div>
-	<div id="res_right">优秀文章（下拉列表）</div>
+	<div id="res_right">
+	<div id="essay_title">&nbsp&nbsp精选文章列表（HOT）</div>
+	</div>
 </div>
 
 <div class="time_wrap">
@@ -81,7 +83,8 @@
 </div>
 
 <div class="footer">
-	这里放的是页脚
+	<span>博明网络科技有限公司版权所有   京ICP证140465号   京ICP备13032407号-1   京公网安备 11010802013162</span>
+	<span>河南省 新乡市 红旗区 河南科技学院 0号楼9层  1197516839@qq.com</span>
 </div>
 
 <!-- 这个是注册/登录窗口 -->
@@ -106,7 +109,7 @@
 	</div>
 </form>
 
-<script  type="js/javascript" src="js/zns_js.js"></script>
+<script  type="js/javascript" src="js/clock.js"></script>
 <script type="text/javascript" src="js/ajax.js"></script>
 <script type="text/javascript" src="js/index_js.js"></script>
  </body>
