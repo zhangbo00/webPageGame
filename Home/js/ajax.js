@@ -38,6 +38,11 @@ function ajax(url, fnSucc, fnFaild)
 		}
 	};
 }
+<<<<<<< HEAD
 function fnFaild () {
 		
 }
+=======
+
+
+>>>>>>> cffe88ea26a1529a4a4e043a7f404f29ecbf7be4

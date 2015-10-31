@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Geek Studio</title>
   <link rel="stylesheet" href="css/index_css.css">
+  <link rel="stylesheet" href="css/zns_style.css" type="text/css"  />
+  <style type="text/css" id="css"></style>
 
  </head>
  <body>
@@ -31,15 +33,40 @@
 
 <!-- 这里要放的是轮播 -->
 <div class="banner" style="clear:both">
-	这里放轮播
+	<div id="banner">
+		<ul id="ul"></ul>
+		<ol id="ol">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ol>
+	</div>
 </div>
 
 <div class="hot_info">
 	<div class="hot_info_wrap">
 		<ul id="ul_info">
-			<li>热点一</li>
-			<li>热点二</li>
-			<li>热点三</li>
+			<li>
+				<div class="hot_info">
+					<a href=""></a>
+					<div class="hot_title">Title</div>
+					<img src="images/hot1.png"/>
+					<div class="hot_content"><span>学习无疑是程序员最为重要的素质之一，尤其是互联网这种日新月异的行业，把学习当做工作的一大半也不为过。</span></div>
+				</div>
+			</li>
+			<li><div class="hot_info">
+					<a href=""></a>
+					<div class="hot_title">Title</div>
+					<img src="images/hot1.png"/>
+					<div class="hot_content"><span>学习无疑是程序员最为重要的素质之一，尤其是互联网这种日新月异的行业，把学习当做工作的一大半也不为过。</span></div	>
+				</div></li>
+			<li><div class="hot_info">
+					<a href=""></a>
+					<div class="hot_title">Title</div>
+					<img src="images/hot1.png"/>
+					<div class="hot_content"><span>学习无疑是程序员最为重要的素质之一，尤其是互联网这种日新月异的行业，把学习当做工作的一大半也不为过。</span></div>
+				</div></li>
 		</ul>
 	</div>
 </div>
@@ -50,7 +77,7 @@
 </div>
 
 <div class="time_wrap">
-	这里放数子表
+	<div id="div1"></div>
 </div>
 
 <div class="footer">
@@ -79,7 +106,8 @@
 	</div>
 </form>
 
-
+<script  type="js/javascript" src="js/zns_js.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
 <script type="text/javascript" src="js/index_js.js"></script>
  </body>
 </html>
