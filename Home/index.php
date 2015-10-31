@@ -52,20 +52,20 @@
 					<a href=""></a>
 					<div class="hot_title">Title</div>
 					<img src="images/hot1.png"/>
-					<div class="hot_content"><span>Content</span></div>
+					<div class="hot_content"><span>学习无疑是程序员最为重要的素质之一，尤其是互联网这种日新月异的行业，把学习当做工作的一大半也不为过。</span></div>
 				</div>
 			</li>
 			<li><div class="hot_info">
 					<a href=""></a>
 					<div class="hot_title">Title</div>
 					<img src="images/hot1.png"/>
-					<div class="hot_content"><span>Content</span></div>
+					<div class="hot_content"><span>学习无疑是程序员最为重要的素质之一，尤其是互联网这种日新月异的行业，把学习当做工作的一大半也不为过。</span></div	>
 				</div></li>
 			<li><div class="hot_info">
 					<a href=""></a>
 					<div class="hot_title">Title</div>
 					<img src="images/hot1.png"/>
-					<div class="hot_content"><span>Content</span></div>
+					<div class="hot_content"><span>学习无疑是程序员最为重要的素质之一，尤其是互联网这种日新月异的行业，把学习当做工作的一大半也不为过。</span></div>
 				</div></li>
 		</ul>
 	</div>
