@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Geek Studio</title>
   <link rel="stylesheet" href="css/index_css.css">
+  <link rel="stylesheet" href="css/zns_style.css" type="text/css"  />
   <style type="text/css" id="css"></style>
 
  </head>
@@ -59,7 +60,7 @@
 </div>
 
 <div class="time_wrap">
-	这里放数子表
+	<div id="div1"></div>
 </div>
 
 <div class="footer">
@@ -88,7 +89,8 @@
 	</div>
 </form>
 
-
+<script  type="js/javascript" src="js/zns_js.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
 <script type="text/javascript" src="js/index_js.js"></script>
  </body>
 </html>

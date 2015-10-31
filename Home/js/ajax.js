@@ -38,3 +38,5 @@ function ajax(url, fnSucc, fnFaild)
 		}
 	};
 }
+
+
