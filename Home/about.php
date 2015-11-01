@@ -8,6 +8,7 @@
     <script type="text/javascript" src="../public/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
     <!--自我独有引用部分-->
+    <link rel="stylesheet" href="css/about_history.css">
     <link rel="stylesheet" href="css/about.css">
     <script type="text/javascript" src="js/about.js"></script>
     <link rel="shortcut icon" href="http://static.tmimgcdn.com/img/favicon.ico">
@@ -36,7 +37,6 @@
     <!-- Tab panes -->
     <div id="about_content" class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="title_1">
-        <h4 id="one" class="bg-danger">公司简介</h4>
         <div class="jumbotron logoba logobox">
           <img src="images/logo_v.jpg" alt="">
         </div>
@@ -60,37 +60,83 @@
         </div>
       </div>
       <div role="tabpanel" class="tab-pane" id="title_2">
-        <h4 id="two" class="bg-danger">企业文化</h4>
-        <h4 id="culture" class="bg-primary">文化</h4>
         <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. gfLo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
       </div>
       <div role="tabpanel" class="tab-pane" id="title_3">
-        <h4 id="three" class="bg-danger">发展历程</h4>
-        <h4 id="history" class="bg-primary">历程</h4>
-        <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. gfLo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+        <div class="page">
+        <div class="header">
+        <div class="box">
+          <ul class="event_year">
+            <li class="current"><label for="2013">2013</label></li>
+            <li><label for="2012">2012</label></li>
+            <li><label for="2011">2011</label></li>
+          </ul>
+          <ul class="event_list">
+            <div>
+              <h3 id="2013">2013</h3>
+              <li>
+              <span>5月</span>
+              <p><span>站长之家专栏改版上线</span></p>
+              </li>
+              <li>
+                <span>4月</span>
+                <p><span>站长工具旗下产品，超级监控上线</span></p>
+              </li>
+              <li>
+              <span>3月</span>
+              <p><span>站长之家创业栏目上线</span></p>
+              </li>
+            </div>
+
+            <div>
+              <h3 id="2012">2012</h3>
+              <li>
+              <span>9月</span>
+              <p><span>站长之家北京分公司成立</span></p>
+              </li>
+            </div>
+
+            <div>
+              <h3 id="2011">2011</h3>
+              <li><span>3月13日</span><p><span><a href="http://www.313.com/" target="_blank">建站大师（www.313.com）上线</a></span></p></li>
+
+              <li><span>3月26日</span><p><span>站长论坛荣获<a href="http://bbs.ifeng.com/special/bbs100/" target="_blank">2010年第二届中文论坛100强称号（名列第50位）</a></span></p></li>
+
+              <li><span>4月-11月</span><p><span>4月-11月 站长之家<a href="http://9th.chinaz.com/" target="_blank">九周年全国交流会启动（厦门、南京、杭州、广州、合肥、武汉、西安、重庆、上海等地）</a>，同时宣布与新浪微博达成<a href="http://9th.chinaz.com/tianshijijin.aspx" target="_blank">微博创新基金合作，启动中小站长专项投资</a></span></p></li>
+
+              <li><span>6月11日</span><p><span><a href="http://open.313.com" target="_blank">推出建站大师开放平台open.313.com</a></span></p></li>
+
+              <li><span>9月10日</span><p><span>站长之家北京分公司成立</span></p></li>
+            </div>         
+          </ul>
+
+          <div class="clearfix"></div>
+          
+        </div>
+        </div>
+        </div>
       </div>
       <div role="tabpanel" class="tab-pane" id="title_4">
-        <h4 id="three" class="bg-danger">成员介绍</h4>
         <ul class="about_members">
           <li>
-            <div><img src="images/sy_50382172896.jpg" alt=""></div>
-            <div>
+            <div class="img_box img_box_left"><img src="images/sy_50382172896.jpg" alt=""></div>
+            <div class="members_text members_text_left">
               <h2>姓名</h2>
               <h3>工作</h3>
               <p>个人简介</p>
             </div>
           </li>
           <li>
-            <div><img src="images/sy_50382172896.jpg" alt=""></div>
-            <div>
+            <div class="img_box img_box_left"><img src="images/sy_50382172896.jpg" alt=""></div>
+            <div class="members_text members_text_left">
               <h2>姓名</h2>
               <h3>工作</h3>
               <p>个人简介</p>
             </div>
           </li>
           <li>
-            <div><img src="images/sy_50382172896.jpg" alt=""></div>
-            <div>
+            <div class="img_box img_box_left"><img src="images/sy_50382172896.jpg" alt=""></div>
+            <div class="members_text members_text_left">
               <h2>姓名</h2>
               <h3>工作</h3>
               <p>个人简介</p>
