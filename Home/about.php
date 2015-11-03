@@ -28,15 +28,21 @@
     <!-- Nav tabs -->
     <div id="about_title">
       <ul id="founder" class="nav nav-tabs" >
-        <li role="presentation" class="active"><a id="myTabs" href="#title_1" aria-controls="home" role="tab" data-toggle="tab">公司简介</a></li>
-        <li role="presentation"><a href="#title_2" aria-controls="messages" role="tab" data-toggle="tab">企业文化</a></li>
-        <li role="presentation"><a href="#title_3" aria-controls="settings" role="tab" data-toggle="tab">发展历程</a></li>
-        <li role="presentation"><a href="#title_4" aria-controls="settings" role="tab" data-toggle="tab">成员介绍</a></li>
+        <?php   //读标题并进行添加
+          $about_title=array('公司简介','企业文化','发展历程','成员介绍');
+          foreach ($about_title as $key => $value) {
+            if($key==0){
+              echo "<li role='presentation' class='active'><a id='myTabs' href='#title_$key' aria-controls='home' role='tab' data-toggle='tab'>$value</a></li>";
+            }else{
+              echo "<li role='presentation'><a href='#title_$key' aria-controls='messages' role='tab' data-toggle='tab'>$value</a></li>";
+            }
+          }
+         ?>
       </ul>
     </div>
     <!-- Tab panes -->
     <div id="about_content" class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="title_1">
+      <div role="tabpanel" class="tab-pane active" id="title_0">
         <div class="jumbotron logoba logobox">
           <img src="images/logo_v.jpg" alt="">
         </div>
@@ -59,65 +65,78 @@
           </p>
         </div>
       </div>
-      <div role="tabpanel" class="tab-pane" id="title_2">
+      <div role="tabpanel" class="tab-pane" id="title_1">
         <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. gfLo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
       </div>
-      <div role="tabpanel" class="tab-pane" id="title_3">
+
+      <div role="tabpanel" class="tab-pane" id="title_2">
         <div class="page">
         <div class="header">
         <div class="box">
           <ul class="event_year">
-            <li class="current"><label for="2013">2013</label></li>
-            <li><label for="2012">2012</label></li>
-            <li><label for="2011">2011</label></li>
+            <?php 
+              //获取年，左侧栏
+              $about_course_year=array('2013','2012','2011');
+              foreach ($about_course_year as $key => $value) {
+                if($key==0)
+                  echo "<li class='current'><label for=$value>$value</label></li>";
+                else
+                  echo "<li><label for=$value>$value</label></li>";
+              }
+             ?>
           </ul>
           <ul class="event_list">
-            <div>
-              <h3 id="2013">2013</h3>
-              <li>
-              <span>5月</span>
-              <p><span>站长之家专栏改版上线</span></p>
-              </li>
-              <li>
-                <span>4月</span>
-                <p><span>站长工具旗下产品，超级监控上线</span></p>
-              </li>
-              <li>
-              <span>3月</span>
-              <p><span>站长之家创业栏目上线</span></p>
-              </li>
-            </div>
-
-            <div>
-              <h3 id="2012">2012</h3>
-              <li>
-              <span>9月</span>
-              <p><span>站长之家北京分公司成立</span></p>
-              </li>
-            </div>
-
-            <div>
-              <h3 id="2011">2011</h3>
-              <li><span>3月13日</span><p><span><a href="http://www.313.com/" target="_blank">建站大师（www.313.com）上线</a></span></p></li>
-
-              <li><span>3月26日</span><p><span>站长论坛荣获<a href="http://bbs.ifeng.com/special/bbs100/" target="_blank">2010年第二届中文论坛100强称号（名列第50位）</a></span></p></li>
-
-              <li><span>4月-11月</span><p><span>4月-11月 站长之家<a href="http://9th.chinaz.com/" target="_blank">九周年全国交流会启动（厦门、南京、杭州、广州、合肥、武汉、西安、重庆、上海等地）</a>，同时宣布与新浪微博达成<a href="http://9th.chinaz.com/tianshijijin.aspx" target="_blank">微博创新基金合作，启动中小站长专项投资</a></span></p></li>
-
-              <li><span>6月11日</span><p><span><a href="http://open.313.com" target="_blank">推出建站大师开放平台open.313.com</a></span></p></li>
-
-              <li><span>9月10日</span><p><span>站长之家北京分公司成立</span></p></li>
-            </div>         
-          </ul>
-
-          <div class="clearfix"></div>
+            <?php
+              //获取内容
+              $about_course_content=array(
+                '2013'=>array(
+                  array('time'=>'5月','content'=>'站长之家专栏改版上线'),
+                  array('time'=>'3月','content'=>'站长之家创业栏目上线')
+                ),
+                '2012'=>array(
+                  array('time'=>'9月','content'=>'站长之家北京分公司成立'),
+                  array('time'=>'3月','content'=>'站长之家创业栏目上线')
+                ),
+                '2011'=>array(
+                  array('time'=>'3月13日','content'=>'建站大师（www.313.com）上线'),
+                  array('time'=>'3月','content'=>'站长之家创业栏目上线')
+                )
+              );
+              //添加进列表
+              foreach ($about_course_content as $key => $value) {
+                echo "<div><h3 id=$key>$key</h3>";
+                  foreach ($value as $v){
+                    echo "<li><span>".$v['time']."</span><p><span>".$v['content']."</span></p></li><li>";
+                  }
+                echo "</div>";
+              } 
+             ?>
           
+          </ul>
+          <div class="clearfix"></div>
         </div>
         </div>
         </div>
       </div>
-      <div role="tabpanel" class="tab-pane" id="title_4">
+
+      <div role="tabpanel" class="tab-pane" id="title_3">
         <ul class="about_members">
+          <?php 
+            $about_members_content=array(
+              array('img'=>'images/sy_50382172896.jpg','name'=>'姓名1','work'=>'工作','summary'=>'概要'),
+              array('img'=>'images/sy_50382172896.jpg','name'=>'姓名2','work'=>'工作','summary'=>'概要'),
+              array('img'=>'images/sy_50382172896.jpg','name'=>'姓名3','work'=>'工作','summary'=>'概要')
+            );
+
+            foreach ($about_members_content as $value) {
+              echo "<li>";
+              echo "<div class='img_box img_box_left'><img src=".$value['img']." alt='图片'></div>";
+              echo "<div class='members_text members_text_left'>";
+              echo "<h2>".$value['name']."</h2><h3>".$value['work']."</h3><p>".$value['summary']."</p>";
+              echo "</div></li>";
+            }
+           ?>
+          <!--  介绍 ***** HTML示范
           <li>
             <div class="img_box img_box_left"><img src="images/sy_50382172896.jpg" alt=""></div>
             <div class="members_text members_text_left">
@@ -126,22 +145,7 @@
               <p>个人简介</p>
             </div>
           </li>
-          <li>
-            <div class="img_box img_box_left"><img src="images/sy_50382172896.jpg" alt=""></div>
-            <div class="members_text members_text_left">
-              <h2>姓名</h2>
-              <h3>工作</h3>
-              <p>个人简介</p>
-            </div>
-          </li>
-          <li>
-            <div class="img_box img_box_left"><img src="images/sy_50382172896.jpg" alt=""></div>
-            <div class="members_text members_text_left">
-              <h2>姓名</h2>
-              <h3>工作</h3>
-              <p>个人简介</p>
-            </div>
-          </li>
+          -->
         </ul>
       </div>
     </div>
