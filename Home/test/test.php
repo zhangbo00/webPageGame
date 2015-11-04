@@ -17,52 +17,19 @@
   <link rel="icon" href="http://static.tmimgcdn.com/img/favicon.ico">
   <link rel="stylesheet" type="text/css" media="all" href="test.css">
 </head>
-<ul class="timeline">
-  <li><div class="tldate">Apr 2014</div></li>
-  
-  <li>
-    <div class="tl-circ"></div>
-    <div class="timeline-panel">
-      <div class="tl-heading">
-        <h4>Surprising Headline Right Here</h4>
-        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3 hours ago</small></p>
-      </div>
-      <div class="tl-body">
-        <p>Lorem Ipsum and such.</p>
-      </div>
-    </div>
-  </li>
-  
-  <li class="timeline-inverted">
-    <div class="tl-circ"></div>
-    <div class="timeline-panel">
-      <div class="tl-heading">
-        <h4>Breaking into Spring!</h4>
-        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 4/07/2014</small></p>
-      </div>
-      <div class="tl-body">
-        <p>Hope the weather gets a bit nicer...</p>
-  
-        <p>Y'know, with more sunlight.</p>
-      </div>
-    </div>
-  </li>
-<div>
-  <li><div class="tldate">Apr 2014</div></li>
-    <li>
-    <div class="tl-circ"></div>
-    <div class="timeline-panel">
-      <div class="tl-heading">
-        <h4>Surprising Headline Right Here</h4>
-        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3 hours ago</small></p>
-      </div>
-      <div class="tl-body">
-        <p>Lorem Ipsum and such.</p>
-      </div>
-    </div>
-  </li>
-
-
+<body>
+<div class="input-append date form_datetime" data-date="2012-12-21T15:25:00Z">
+    <input size="16" type="text" value="" readonly>
+    <span class="add-on"><i class="icon-remove"></i></span>
+    <span class="add-on"><i class="icon-th"></i></span>
 </div>
-  
-</ul>
+ 
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: "dd MM yyyy - HH:ii P",
+        showMeridian: true,
+        autoclose: true,
+        todayBtn: true
+    });
+</script>       
+</body>
