@@ -1,16 +1,25 @@
 <?php
+	/**
+	 * 执行对应操作
+	 */
 	if (!empty($_GET['action'])) {
 		$action = $_GET['action'];
 		$receive = $_POST; 
 		if (function_exists($action)) {
+			require_once('../public/mysql_pdo.php');
 			$action($receive);
 		} else {
 			echo "方法不存在";
 		}
 	}
+	/**
+	 * 留言提交
+	 * @param  [array] $receive [留言的相关信息]
+	 * @return [array]          成功|失败[提示信息]
+	 */
 	function msgSubmit($receive)
 	{	
-		require_once('../public/mysql_pdo.php');
+		global $pdo;
 		// 暂无session
 		$receive['u_id'] = 1; 
 		if (strlen($receive['content'])==0) {
@@ -34,5 +43,22 @@
 			}
 		}
 		echo json_encode($ajax);
+	}
+	/**
+	 * 载入更多回复
+	 * @param  [array] $receive [根节点]
+	 * @return [array]          [回复结果集]
+	 */
+	function answer_load_more($receive)
+	{
+		global $pdo;
+		$query = 'select m.id,m.p_id,m.root,m.content,m.time,m.reply,u.nick,u.head_img from message as m left join user as u on m.u_id=u.id where m.root='.$receive['root'].' and m.status=1 order by time limit '.$receive['answer_num'].','.$receive['limit'];
+		$result = $pdo->query($query);
+		if (!$result) {
+			return;
+		}
+		$answer = $result->fetchAll();
+		array_push($answer,$query);
+		echo json_encode($answer);
 	}
 ?>

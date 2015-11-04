@@ -14,9 +14,11 @@
 
 	<div class="main">
 		<div class="container">
-
 			<?php
 				include('../public/mysql_pdo.php');
+				/**
+				 * 取得留言
+				 */
 				function getMessage()
 				{
 					$result=getItem();
@@ -24,7 +26,7 @@
 					foreach ($result as $key => $value) {
 						$html='<div class="message_item panel panel-default" message-id='.$value['id'].'>';
 							$html.='<div class="message_info panel-heading">';
-								$html.=$value['nick'].'<img class=head_img src'.$value['head_img'].'>'.date('y-m-d h:i:s',$value['time']);
+								$html.=$value['nick'].'<img class=head_img src'.$value['head_img'].'>'.date('y-m-d h:i',$value['time']);
 							$html.='</div>';
 							$html.='<div class="reply panel-body">';
 								$html.='<xmp class=content>body'.$value['content'].':'.$value['root'].'</xmp>';
@@ -35,16 +37,21 @@
 								$html.='</div>';
 							$html.='</div>';
 							$html.='<ul class="list-group">';
-							if ($anwser=getItem($value['id'],10)) {
+							if ($anwser=getItem($value['id'],5)) {
+								$i = 0;
 								foreach ($anwser as $key => $item) {
 									$html.='<li class="list-group-item">';
-									$html.=$item['nick'].$item['content'].':'.$item['root'];
+									$html.=$item['nick'].$item['content'].':'.$item['root'].'time:'.date('y-m-d h:i',$value['time']);
 									$html.='<button type="button" class="reply btn btn-default">回复</button>';
 									$html.='<div class="reply_content">';
 										$html.='<textarea></textarea>';
 										$html.='<button type="button" class="submit btn btn-default" message-id='.$item['id'].'>提交</button>';
 									$html.='</div>';
 									$html.='</li>';
+									$i++;
+									if ($i==5) {
+										$html.='<li class="list-group-item load_more">查看更多</li>';
+									}
 								}
 							}
 							$html.='</ul>';
@@ -52,6 +59,12 @@
 						echo $html;
 					}
 				}
+				/**
+				 * 取得项目
+				 * @param  integer $root  根节点
+				 * @param  integer $limit 条数限制
+				 * @return [type]         留言|回复结果集
+				 */
 				function getItem($root=0,$limit=20)
 				{
 					global $pdo;
