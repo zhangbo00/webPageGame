@@ -35,7 +35,7 @@
 								$html.='</div>';
 							$html.='</div>';
 							$html.='<ul class="list-group">';
-							if ($anwser=getItem($value['id'],3)) {
+							if ($anwser=getItem($value['id'],10)) {
 								foreach ($anwser as $key => $item) {
 									$html.='<li class="list-group-item">';
 									$html.=$item['nick'].$item['content'].':'.$item['root'];
@@ -63,7 +63,7 @@
 				getMessage(0,10);
 			?>
 			<div class="message">
-				<textarea style="width: 100%;height: 100px; resize: none" name="" plcaeholder"ÇëÊäÈë"></textarea>
+				<textarea style="width: 100%;height: 100px; resize: none" name="" plcaeholder"回复"></textarea>
 				<button class="btn btn-info" type="button">留言</button>		
 			</div>
 		</div>
