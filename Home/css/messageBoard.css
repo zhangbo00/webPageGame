@@ -3,3 +3,11 @@
 	height: 500px;
 	background: #fcc;
 }
+.reply_content{
+	display: none;
+}
+.reply_content>textarea{
+	resize:none;
+	width: 50%;
+	height: 50px;
+}

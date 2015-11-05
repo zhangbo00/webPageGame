@@ -1,0 +1,54 @@
+.content{
+	width: 60%;
+	margin: 0 auto;
+}
+.content ul li{
+	display: inline-block;
+	width: 100%;
+	margin-top: 50px;
+}
+.content ul li .img_box{
+	display:inline-block;
+	width: 30%;
+	overflow: hidden;
+	text-align: left;
+}
+.content ul li .img_box img{
+	width: 100%;
+}
+.content ul li .text{
+	display:inline-block;
+	width: 60%;
+	float: right;
+	overflow: hidden;
+	text-align: left;
+}
+.content ul li .text .form-control{
+	border-color: #8a6d3b;
+	color: #8a6d3b;
+	margin: 10px 0;
+}
+.content ul li .text .form-control:first-child{
+	border-color: #3c763d;
+	color: #3c763d;
+}
+.content ul li .text .form-control:last-child{
+	border-color: #a94442;
+	color: #a94442;
+}
+.content ul li .button{
+	display:inline-block;
+	width: 100%;
+	text-align: right;
+}
+.content ul li .button button{
+	margin-left: 50px;
+}
+.content .course tr{
+	border: 1px solid black;
+}
+.content .course tr td{
+	border: 1px solid black;
+	padding: 10px;
+	text-align: center;
+}

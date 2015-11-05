@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>修改关于</title>
+	<title>修改介绍</title>
 </head>
 <body>
 <h1>连接数据库</h1>
