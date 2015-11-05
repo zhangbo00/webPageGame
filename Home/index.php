@@ -25,9 +25,12 @@
 				</ul>
 			</div>
 			<div class="pull-right">
-				<span class="btn_login_text">您没有登录!</span>
+				<span class="btn_login_text" id="text_login">您没有登录!</span>
 				<span class="btn_login_text" id="btn_login">登录</span>
+				<span class="btn_login_text" id="btn_exit">退出</span>
+				<span class="btn_login_text" id="user_center" style="display:none;float:right;">个人中心</span>
 			</div>
+			
 		</div>
 
 
@@ -93,24 +96,24 @@
 		<div id="lgn">
 		<div id="close_login"></div>
 		<span class="login_title">用户登录</span>
-			<div class="user_login">
-				
-				<label for="user_name" class="u_lb">用户名：</label>
-				<input id="user_name" name="user_name" class="u_text"/><br/>
-				<label for="user_password" class="u_lb">密&nbsp&nbsp码：</label>
-				<input type="password" id="user_password" name="user_password" class="u_text"/><br/>
-			</div>
+			<table class="user_login">
+				<tr>
+				<td><label for="user_name" class="u_lb">用户名：</label></td>
+				<td><input id="user_name" name="user_name" class="u_text"/></td></tr>
+				<tr>
+				<td><label for="user_password" class="u_lb">密码：</label></td>
+				<td><input type="password" id="user_password" name="user_password" class="u_text"/></td></tr>
+			</table>
+			<span id = "message"style="display:block;height:12px;color:#ff3333;font-family:Microsoft Yahei;"> </span>
 			<div class="btns">
 				<input  type="button" name="login_btn" id="login_btn" value="登录"/>
 				<input type="button" name="login_btn" id="sign_in_btn" value="注册"/>
-				<a href="#" id="forget">忘记密码？</a>
 			</div>
 		</div>
 	</div>
 </form>
 
 <script  type="js/javascript" src="js/clock.js"></script>
-<script type="text/javascript" src="js/ajax.js"></script>
 <script type="text/javascript" src="js/index_js.js"></script>
  </body>
 </html>
