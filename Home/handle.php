@@ -12,6 +12,7 @@
 			echo "方法不存在";
 		}
 	}
+
 	/**
 	 * 留言提交
 	 * @param  [array] $receive [留言的相关信息]
@@ -44,6 +45,35 @@
 		}
 		echo json_encode($ajax);
 	}
+
+
+	function msgSubmit_copy($receive)
+	{
+		global $pdo;
+		// 暂无session
+		$receive['u_id'] = 1; 
+		if (strlen($receive['content'])==0) {
+			$ajax['code'] = 0;
+			$ajax['message'] = '不能为空';
+		}
+		else {
+			$time = time();
+			$stmt = $pdo->prepare("insert into message_copy (u_id,path,content,time) values (?,?,?,?)");
+			$stmt->bindParam(1, $receive['u_id']);
+			$stmt->bindParam(2,$receive['path']);
+			$stmt->bindParam(3, $receive['content']);
+			$stmt->bindParam(4, $time);
+			$result = $stmt->execute();
+			if ($result > 0) {
+				$ajax['code'] = 1;
+			} else {
+				$ajax['code'] = 0;
+				$ajax['message'] = '请稍后再试';
+			}
+		}
+		echo json_encode($ajax);
+	}
+
 	/**
 	 * 载入更多回复
 	 * @param  [array] $receive [根节点]

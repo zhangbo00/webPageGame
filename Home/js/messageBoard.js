@@ -80,7 +80,7 @@ $(function () {
 		msg_data['p_id'] = 0;
 		var check = checkData(msg_data)
 		if (check['code'] == 0){
-			alert(error);
+			alert(check['message']);
 			return;
 		}
 		sendData(msg_data);
@@ -92,10 +92,9 @@ $(function () {
 	//点击回复留言
 	$(".reply_content .submit").click(function () {
 		var msg_data = getData($(this));
-		var error = checkData(msg_data)
 		var check = checkData(msg_data)
 		if (check['code'] == 0){
-			alert(error);
+			alert(check['message']);
 			return;
 		}
 		sendData(msg_data);
