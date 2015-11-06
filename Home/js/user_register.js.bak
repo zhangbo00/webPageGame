@@ -1,0 +1,162 @@
+window.onload=function(){
+
+	var close=document.getElementById('close');
+	var commit=document.getElementById('commit');
+
+	commit.onclick=function(){
+			if (confirm("你确定提交吗？")) {
+				check();
+				alert("通过测试了！");
+			}
+	}
+	close.onclick=function(){
+			if (confirm("你确定关闭吗？")) {
+				window.close();
+			}
+	}
+
+
+
+
+}
+
+/*用户注册判断函数*/
+function check(){
+	//===============密码检测
+		var nick = document.getElementById("nick");                                        //获取昵称文本框
+		var usernick=nick.value;																			//获取昵称文本框的值
+		var re = /\s*/g;																						    //去空格的正则表达式
+		usernick = usernick.replace(re, '');															//执行正则表达式
+		if(usernick.length > 20||usernick.length<=0)
+		{
+			alert("昵称错误！");
+			return false;
+		} 
+
+	//===============密码检测
+		var password = document.getElementById("password");
+		var userpassword=password.value;
+		if(userpassword.length > 16||userpassword.length<6||userpassword.indexOf(" ")!=-1)						//密码长度有错或存空格
+		{
+			alert("密码格式出错！");
+			return false;
+		} 
+
+	//===============邮箱检测
+		var email =  document.getElementById("email")
+		var useremail = email.value; 
+		var expr =  /^([0-9]|[a-z])+@([0-9]|[a-z])+(\.[c][o][m])$/i;
+		if(useremail.length>30||useremail.length<7||!expr.test(useremail)){
+			alert("邮箱长度出错");
+			return false;
+		}
+
+	//===============手机号检测
+		var mobiel=document.getElementById("mobiel");
+		var userphone = mobiel.value;     
+		var re = /^1\d{10}$/; 
+		if(userphone.length!=11||!re.test(str)){
+			alert("手机号有问题！");
+			return false;
+		}
+
+	//===============密码是否一样检测
+		var confirm_password=document.getElementById("confirm_password");
+		var password2 = confirm_password.value;
+		if(password!=password2)
+		{
+			alert("密码不一致");
+			return false;
+		}
+		return true;
+}
+
+  //判断用户名的长度
+function checkUsername()
+{
+    var nick = document.getElementById("nick");
+    var usernick=nick.value; 
+	var re = /\s*/g;            // 创建正则表达式模式。
+	usernick = usernick.replace(re, '');    // 用 "A" 替换 "The"。
+	alert(usernick);
+
+
+    if(usernick.length > 20||usernick.length<=0)
+    {
+		alert("昵称过长！");
+	    return false;
+    } 
+    else
+    return true;
+}
+  //判断用户密码的长度
+function checkPassword()
+{
+    var password = document.getElementById("password");
+    var userpassword=password.value;    
+    if(userpassword.length > 16||userpassword.length<6)
+    {
+		alert("密码长度出错");
+      return false;
+    } 
+    else
+    return true;
+}
+
+  //判断用户邮箱的长度
+function checkEmail()
+{
+// 利用正则表达式对输入数据匹配
+   var email =  document.getElementById("email")
+   var useremail = email.value;    
+
+   if(useremail.length>30||useremail.length<7){
+		alert("邮箱长度出错");
+   }
+	//以字母或数字开头，跟上@,字母数字以.com结尾
+	else{
+		var expr =  /^([0-9]|[a-z])+@([0-9]|[a-z])+(\.[c][o][m])$/i;
+	    if(!expr.test(useremail))
+	    {
+			 alert("输入的邮箱格式有误");
+			 return false;
+	    }
+   }
+   return true;
+}
+
+
+  //判断用户手机号是否有问题
+function checkPhoneNumber()
+{
+// 利用正则表达式对输入数据匹配
+   var mobiel=document.getElementById("mobiel");
+   var userphone = mobiel.value;     
+//匹配到一个非数字字符，则返回false 
+	if(userphone.length!=11){
+		alert("手机号有问题！");
+	}else{
+	   var expr =  /[1]\d{10}/i;
+	   if(expr.test(phone))
+	   {
+		  alert("输入的手机号格式有误");
+		  return false;
+	   }
+	}
+   return true;
+}
+
+  //判断再次输入的密码是否一样
+function checkPassword2()
+{
+     var id=document.getElementById("password");
+     var id2=document.getElementById("confirm_password");
+     var password = id.value;    
+     var password2 = id2.value;
+     if(password!=password2)
+     {
+        alert("密码不一致");
+        return false;
+     }
+     return true;    
+}

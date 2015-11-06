@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/contact_us.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联系我们</title>
+<script src="js/contact_us.js"></script>
+<?php
+	echo "<link href='public/public.css' type='text/css' rel='stylesheet' />"
+?>
+</head>
+
+<body>
+<?php
+	require_once('public/header.html');
+?>
+<ul id="ul1">
+	<li><h2>王明亮(男)</h2><p>本次受考核成员，<br/><br/>&gt;&gt;QQ：572605627</p></li>
+    <li><h2>张博(男)</h2><p>非本次受考核成员，在考核例子中主要负责游走&&辅助。虽然是个打酱油的，但是对本次考核起到了巨大的帮助！<br/><br/>&gt;&gt;QQ：1197516839</p></li>
+    <li><h2>刘博(男)</h2><p>本次受考核成员，在考核例子中多负责界面方面的设计。还包括一些PHP的数据处理。在本例中也是不可缺少的。<br/><br/>&gt;&gt;QQ：1003670604</p></li>
+</ul>
+</body>
+</html>

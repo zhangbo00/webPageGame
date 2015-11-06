@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html onselectstart="return false">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心</title>
+	<link rel="stylesheet" type="text/css" href="css/user_center.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+</head>
+<body>
+<!-- 页面背景 -->
+<div id="Layer1" style="position:absolute; width:100%; height:99.89%; z-index:-1">    
+<img src="images/bph_bg.png" height="100%" width="100%"/> 
+</div>  
+
+<div id="wrap">
+	<div id="info">
+		<span id="title">个人中心</span>
+		<table cellpadding="0" cellspacing="0" id="Table">
+			<tr>
+				<td class="text"><label for="nick">昵称</label></td>
+				<td ><input type="text" class="msg" id="nick"></td>
+			</tr>
+			<tr>
+				<td class="text"><label for="pass">密码</label></td>
+				<td ><input type="password" class="msg" id="pass"></td>
+			</tr>
+			<tr>
+				<td class="text"><label for="qr_pass">确认密码</label></td>
+				<td ><input type="password" class="msg" id="qr_pass"></td>
+			</tr>
+			<tr>
+				<td class="text"><label for="phone">手机号</label></td>
+				<td ><input type="text" class="msg" id="phone"></td>
+			</tr>
+
+		</table>
+		<div id="btn_wrap">
+			<div id="commit">修改</div>
+			<div id="reset">重置</div>
+		</div>
+	</div>
+
+</div>
+
+</body>
+<script type="text/javascript" src="js/user_center.js"></script>
+</html>

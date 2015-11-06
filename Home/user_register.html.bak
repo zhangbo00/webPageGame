@@ -1,0 +1,72 @@
+<!doctype html>
+<html onselectstart='return false'>
+ <head>
+  <meta charset="UTF-8">
+  <title>用户注册</title>
+  <link type="text/css" rel="stylesheet" href="css/user_register.css"/>
+ </head>
+ <body>
+	<p class="title">用户注册</p>
+	<form method="post" action="user_register.php">
+
+		<table class="user_register" cellpadding="0" cellspacing="0">
+			<tbody>
+				<tr>
+					<td class="field_name">
+					<label for="nick">昵称：</label>
+					</td>
+					<td class="field_value">
+					<input type="text" id="nick" name="nick" class="value_text"/>
+					</td>
+				</tr>
+
+
+
+				<tr>
+					<td class="field_name">
+					<label for="password">密码：</label>
+					</td>
+					<td class="field_value">
+					<input type="password" id="password" name="password" class="value_text"/>
+					</td>
+				</tr>
+			
+				<tr>
+					<td class="field_name">
+					<label for="confirm_password">确认密码：</label>
+					</td>
+					<td class="field_value">
+					<input type="text" id="confirm_password" name="confirm_password" class="value_text"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="field_name">
+					<label for="email">邮箱：</label>
+					</td>
+					<td class="field_value">
+					<input type="text" id="email" name="email" class="value_text"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="field_name">
+					<label for="mobiel">手机号：</label>
+					</td>
+					<td class="field_value">
+					<input type="text" id="mobiel" name="mobiel" class="value_text"/>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	<div class="wrap_btn">
+		<input type="submit" value="注册" class="btn" id="commit" name="submit"/>
+		<input type="button" value="关闭" class="btn" id="close"/>
+	</div>
+	</form>
+
+
+<script  type="text/javascript" src="js/user_register.js"></script>
+
+ </body>
+</html>
