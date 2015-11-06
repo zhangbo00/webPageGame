@@ -18,18 +18,31 @@
   <link rel="stylesheet" type="text/css" media="all" href="test.css">
 </head>
 <body>
-<div class="input-append date form_datetime" data-date="2012-12-21T15:25:00Z">
-    <input size="16" type="text" value="" readonly>
-    <span class="add-on"><i class="icon-remove"></i></span>
-    <span class="add-on"><i class="icon-th"></i></span>
-</div>
+<?php 
  
-<script type="text/javascript">
-    $(".form_datetime").datetimepicker({
-        format: "dd MM yyyy - HH:ii P",
-        showMeridian: true,
-        autoclose: true,
-        todayBtn: true
-    });
-</script>       
+　　include "PHPMailer/class.phpmailer.php";
+　　function send_mail($frommail,$tomail,$subject,$body,$ccmail,$bccmail){
+    $mail = new PHPMailer();
+    $mail->IsSMTP();
+    $mail->SMTPDebug;
+    $mail->Host = "smtp.qq.com";
+    $mail->SMTPAuth = true;
+    $mail->Port = 25;
+    $mail->Username = "admin@51yip.com";
+    $mail->Password = "******";
+    $mail->AddReplyTo($frommail, 'tankzhang');
+    $mail->AddAddress($tomail);
+    $mail->SetFrom($frommail, 'tankzhang');
+    $mail->IsHTML(true);
+    $mail->Subject = $subject;
+    $mail->MsgHTML($body);
+　　if(!$mail->Send())
+　　{
+　　echo "邮件发送失败.
+　　";
+　　echo "错误原因: " . $mail->ErrorInfo;
+　　exit;
+　　}else{
+    echo "success";
+?>
 </body>

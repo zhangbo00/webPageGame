@@ -22,36 +22,27 @@
 				<td>是否选中</td>
 			</thead>
 	<?php 
-/*		require ('../public/mysql_pdo.php');	//连接数据库
+/*		require ('../../public/mysql_pdo.php');	//连接数据库
 		$str = "select * from about;";
 	    foreach ( $pdo-> query ( $str ) as  $row ) {
         print  $row [ 'id' ] .  " : " ;
         echo $row['title']."<br>";*/
-        $about_course_content=array(
-        	'2013'=>array(
-	        	array('time'=>'5月','content'=>'站长之家专栏改版上线'),
-	        	array('time'=>'3月','content'=>'站长之家创业栏目上线')
-          	),
-        	'2012'=>array(
-            	array('time'=>'9月','content'=>'站长之家北京分公司成立'),
-            	array('time'=>'3月','content'=>'站长之家创业栏目上线')
-          	),
-        	'2011'=>array(
-	            array('time'=>'3月13日','content'=>'建站大师（www.313.com）上线'),
-	            array('time'=>'3月','content'=>'站长之家创业栏目上线')
-        	)
-        );
-        foreach ($about_course_content as $key => $value) {
-			echo $value['0']['time']."123<br>";
-			echo 
-			"<tr>
-				<td rowspan=".2.">".2013."</td>
-				<td>".0."</td>
-				<td>".5月."</td>
-				<td>".站长之家专栏改版上线."</td>
-				<td><input type='checkbox'></td>
-			</tr>";
-		}
+        require ('../../public/mysql_pdo.php');
+       	$str = "SELECT * FROM course order by date;";
+        $r=$pdo-> query ( $str );
+        $old = 0;
+        foreach ($r as $key => $value) {
+        	$year = (int)date('Y',$value['date']);
+            $time = date('n月j日',$value['date']);
+        	echo 
+	        	"<tr>
+	        	<td>".$year."</td>
+	        	<td>".$value['id']."</td>
+	        	<td>".$time."</td>
+	        	<td>".$value['content']."</td>
+	        	<td><input type='checkbox'></td>
+	        	</tr>";
+        }
 	?>
 	</table>
 		<p style="text-align: right;">
@@ -67,6 +58,9 @@
 		<input type="text" class="form-control">
 		<label for="" class="col-sm-2 control-label">内容</label>
 		<textarea name="" id="" cols="30" rows="10" class="form-control">内容</textarea>
+		<p style="text-align: right;line-height: 80px;">
+			<button class="btn btn-primary">确定</button>
+		</p>
 	</div>  
 	<div class="content">
 		<hr style="height:5px;border:none;border-top:5px ridge green;" />
@@ -82,6 +76,9 @@
 		<input type="text" class="form-control">
 		<label for="" class="col-sm-2 control-label">内容</label>
 		<textarea name="" id="" cols="30" rows="10" class="form-control">内容</textarea>
+		<p style="text-align: right;line-height: 80px;">
+			<button class="btn btn-primary">确定</button>
+		</p>
 	</div> 
 	<!--
 	<div class="content">

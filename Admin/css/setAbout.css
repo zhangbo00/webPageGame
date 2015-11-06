@@ -51,4 +51,8 @@
 	border: 1px solid black;
 	padding: 10px;
 	text-align: center;
+	vertical-align: middle;		/*垂直居中对齐*/
+}
+p button{
+	margin-left: 20px;
 }

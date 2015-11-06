@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>About</title>
-	<!--共有引用部分-->
+  <meta charset="UTF-8">
+  <title>About</title>
+  <!--共有引用部分-->
     <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
     <script type="text/javascript" src="../public/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
@@ -15,15 +15,7 @@
     <link rel="icon" href="http://static.tmimgcdn.com/img/favicon.ico">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
-	<?php 
-		require ('../public/mysql_pdo.php');	//连接数据库
-/*		$str = "select * from about;";
-	    foreach ( $pdo-> query ( $str ) as  $row ) {
-        print  $row [ 'id' ] .  " : " ;
-        echo $row['title']."<br>";
-    }
-*/
-	?>
+  
   <div>
     <!-- Nav tabs -->
     <div id="about_title">
@@ -73,43 +65,61 @@
         <div class="page">
         <div class="header">
         <div class="box">
-          <ul class="event_year">
-            <?php 
-              //获取年，左侧栏
-              $about_course_year=array('2013','2012','2011');
-              foreach ($about_course_year as $key => $value) {
-                if($key==0)
-                  echo "<li class='current'><label for=$value>$value</label></li>";
-                else
-                  echo "<li><label for=$value>$value</label></li>";
-              }
-             ?>
-          </ul>
-          <ul class="event_list">
-            <?php
-              //获取内容
-              $about_course_content=array(
-                '2013'=>array(
-                  array('time'=>'5月','content'=>'站长之家专栏改版上线'),
-                  array('time'=>'3月','content'=>'站长之家创业栏目上线')
-                ),
-                '2012'=>array(
-                  array('time'=>'9月','content'=>'站长之家北京分公司成立'),
-                  array('time'=>'3月','content'=>'站长之家创业栏目上线')
-                ),
-                '2011'=>array(
-                  array('time'=>'3月13日','content'=>'建站大师（www.313.com）上线'),
-                  array('time'=>'3月','content'=>'站长之家创业栏目上线')
-                )
-              );
-              //添加进列表
-              foreach ($about_course_content as $key => $value) {
-                echo "<div><h3 id=$key>$key</h3>";
-                  foreach ($value as $v){
-                    echo "<li><span>".$v['time']."</span><p><span>".$v['content']."</span></p></li><li>";
-                  }
+        <?php 
+          require ('../public/mysql_pdo.php');  //连接数据库
+          echo "<ul class='event_year'>";
+          //按年分组查询
+          //$str = "SELECT year,time,COUNT(*) as n FROM course GROUP BY YEAR;";
+          $str = "SELECT * FROM course order by date;";
+          $r=$pdo-> query ( $str );
+          // foreach ( $r as  $key => $value ) {
+          //   print_r($value);
+          //     echo ;
+          //     echo strtotime($value['year']."/".$value['time']);
+            
+          // }
+          echo "</ul><ul class='event_list'>";
+          $old = 0;
+          //获取内容
+          foreach ( $r as  $key => $value ) {
+            
+            //echo $key."/////////////";
+            $year = (int)date('Y',$value['date']);
+            $time = date('n月j日',$value['date']);
+            if($year > $old){
+              if($old != 0){
                 echo "</div>";
-              } 
+              }
+              echo "<div><h3 id=".$year.">".$year."</h3>";
+              echo '<script type="text/javascript">
+                  $(".event_year").append("<li class=\'current\'><label for=\''.$year.'\'>'.$year.'</label></li>");
+              </script>';
+              $old = $year;
+            }
+              
+              //echo "***********";
+              echo "<li><span>".$time."</span><p><span>".$value['content']."</span></p></li>";
+            
+          }  
+          if($old){
+          echo "</div>";                       
+          }
+/*            $str = "select * from course;";     //查询历程
+              echo "查询数据库历程信息<br>";
+              foreach ( $pdo-> query ( $str ) as  $row ) {
+                  echo "id:   ".$row['id']." ; " ;
+                  echo "year: ".$row['year']." ; ";
+                  echo "time: ".$row['time']." ; ";
+                  echo "content: ".$row['content']." ;";
+                  echo "status: ".$row['status']."<br>";
+              }*/
+
+/*              echo "<br>查询数据库成员信息<br>";
+              $str = "select * from members;";    //查询成员
+              foreach ( $pdo-> query ( $str ) as  $row ) {
+                  echo  $row [ 'id' ] .  " : " ;
+                  echo $row['summary']."<br>";
+              }*/
              ?>
           
           </ul>
@@ -121,18 +131,14 @@
 
       <div role="tabpanel" class="tab-pane" id="title_3">
         <ul class="about_members">
-          <?php 
-            $about_members_content=array(
-              array('img'=>'images/sy_50382172896.jpg','name'=>'姓名1','work'=>'工作','summary'=>'概要'),
-              array('img'=>'images/sy_50382172896.jpg','name'=>'姓名2','work'=>'工作','summary'=>'概要'),
-              array('img'=>'images/sy_50382172896.jpg','name'=>'姓名3','work'=>'工作','summary'=>'概要')
-            );
-
-            foreach ($about_members_content as $value) {
+          <?php
+            $str = "select * from members;";     //查询成员
+            $q=$pdo-> query ($str);
+            foreach ($q as  $row ) {
               echo "<li>";
-              echo "<div class='img_box img_box_left'><img src=".$value['img']." alt='图片'></div>";
+              echo "<div class='img_box img_box_left'><img src=".$row['img']." alt='图片'></div>";
               echo "<div class='members_text members_text_left'>";
-              echo "<h2>".$value['name']."</h2><h3>".$value['work']."</h3><p>".$value['summary']."</p>";
+              echo "<h2>".$row['name']."</h2><h3>".$row['work']."</h3><p>".$row['summary']."</p>";
               echo "</div></li>";
             }
            ?>
