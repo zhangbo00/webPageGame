@@ -20,7 +20,7 @@
 					<li><a href="www.baidu.com">首页</a></li>
 					<li><a href="www.baidu.com">关于我们</a></li>
 					<li><a href="www.baidu.com">相册</a></li>
-					<li><a href="www.baidu.com">留言</a></li>
+					<li><a href="messageBoard.php">留言</a></li>
 					<li><a href="www.baidu.com">联系我们</a></li>
 				</ul>
 			</div>
