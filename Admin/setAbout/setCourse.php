@@ -9,9 +9,17 @@
     <!--自我独有引用部分-->
     <link rel="stylesheet" href="../css/setAbout.css">
     <link rel="stylesheet" href="../js/setAbout.js">
+
+	<!-- 时间控件 -->
+	<link rel="stylesheet" href="datepicker/css/datepicker.css" type="text/css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="datepicker/css/layout.css" />
+	<script type="text/javascript" src="datepicker/js/jquery.js"></script>
+	<script type="text/javascript" src="datepicker/js/datepicker.js"></script>
+    <script type="text/javascript" src="datepicker/js/eye.js"></script>
+    <script type="text/javascript" src="datepicker/js/utils.js"></script>
+    <script type="text/javascript" src="datepicker/js/layout.js?ver=1.0.2"></script>
 </head>
 <body>
-	<h1>连接数据库</h1>
 	<div class="content">
 		<table class="course table table-bordered">
 			<thead>
@@ -22,13 +30,8 @@
 				<td>是否选中</td>
 			</thead>
 	<?php 
-/*		require ('../../public/mysql_pdo.php');	//连接数据库
-		$str = "select * from about;";
-	    foreach ( $pdo-> query ( $str ) as  $row ) {
-        print  $row [ 'id' ] .  " : " ;
-        echo $row['title']."<br>";*/
         require ('../../public/mysql_pdo.php');
-       	$str = "SELECT * FROM course order by date;";
+       	$str = "SELECT * FROM course WHERE STATUS = 1 ORDER BY DATE;";
         $r=$pdo-> query ( $str );
         $old = 0;
         foreach ($r as $key => $value) {
@@ -43,6 +46,19 @@
 	        	<td><input type='checkbox'></td>
 	        	</tr>";
         }
+        /*
+        添加的sql: 对应字段数据
+		INSERT INTO course (date,content) VALUES(1322222222,"测试添加);
+
+		删除的sql：设置status 为 0（假） 
+		UPDATE course SET STATUS = 0 WHERE id=2;
+		
+		查询指定id：状态为1（真）
+		SELECT * FROM course WHERE id=9 AND STATUS=1;
+
+		修改的sql：所有字段（除id）进行更新
+		UPDATE course SET DATE=1333333333 , content='测试' WHERE id = 9;	
+        */
 	?>
 	</table>
 		<p style="text-align: right;">
@@ -55,7 +71,8 @@
 		<hr style="height:5px;border:none;border-top:5px ridge green;" />
 		<h1>添加</h1>
 		<label for="" class="col-sm-2 control-label">时间</label>
-		<input type="text" class="form-control">
+		<input style="display:inline-block;width:100%" class="inputDate form-control" id="inputDate" value="11/05/2015" />
+		<label id="closeOnSelect" style="display:none"><input type="checkbox" checked="checked"/> Close on selection</label>
 		<label for="" class="col-sm-2 control-label">内容</label>
 		<textarea name="" id="" cols="30" rows="10" class="form-control">内容</textarea>
 		<p style="text-align: right;line-height: 80px;">
@@ -67,10 +84,15 @@
 		<h1>修改</h1>
 		<label for="" class="col-sm-2 control-label">编号</label>
 		<select name="" id="" class="form-control">
-			<option value="">1</option>
-			<option value="">2</option>
-			<option value="">3</option>
-			<option value="">4</option>
+			<option value=""></option>
+			<?php
+			//修改的编号获取
+			$str = "SELECT * FROM course WHERE STATUS = 1 ORDER BY id;";
+			$r=$pdo-> query ( $str );
+			foreach ($r as $key => $value) {
+				echo "<option value=".$value['id'].">".$value['id']."</option>";
+			}
+			?>
 		</select>
 		<label for="" class="col-sm-2 control-label">时间</label>
 		<input type="text" class="form-control">
@@ -80,64 +102,5 @@
 			<button class="btn btn-primary">确定</button>
 		</p>
 	</div> 
-	<!--
-	<div class="content">
-		<table class="course table table-bordered">
-			<thead>
-				<td>年份</td>
-				<td>编号</td>
-				<td>时间</td>
-				<td>内容</td>
-				<td>是否选中</td>
-			</thead>
-			<tr>
-				<td rowspan="2">2013</td>
-				<td>0</td>
-				<td>5月</td>
-				<td>站长之家专栏改版上线</td>
-				<td><input type="checkbox"></td>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td>3月</td>
-				<td>站长之家创业栏目上线</td>
-				<td><input type="checkbox"></td>
-			</tr>
-
-			<tr>
-				<td rowspan="2">2012</td>
-				<td>2</td>
-				<td>9月</td>
-				<td>站长之家创业栏目上线</td>
-				<td><input type="checkbox"></td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>3月</td>
-				<td>站长之家创业栏目上线</td>
-				<td><input type="checkbox"></td>
-			</tr>
-			<tr>
-				<td rowspan="2">2011</td>
-				<td>4</td>
-				<td>3月13日</td>
-				<td>建站大师（www.313.com）上线</td>
-				<td><input type="checkbox"></td>
-			</tr>
-			<tr>
-				<td>5</td>
-				<td>3月</td>
-				<td>站长之家创业栏目上线</td>
-				<td><input type="checkbox"></td>
-			</tr>
-		</table>
-		<p style="text-align: right;">
-			<button class="btn btn-primary">添加</button>
-			<button class="btn btn-success">修改</button>
-			<button class="btn btn-warning">删除</button>
-		</p>
-	</div>
-	
-	-->
 </body>
 </html>
