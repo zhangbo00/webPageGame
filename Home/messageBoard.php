@@ -43,7 +43,7 @@
 								$i = 0;
 								foreach ($anwser['messages'] as $key => $item) {
 									$html.='<li class="list-group-item">';
-									$html.=$item['nick'].$item['content'].':'.$item['root'].'time:'.date('y-m-d h:i',$value['time']);
+									$html.=$item['nick'].'<xmp>'.$item['content'].'</xmp>:'.$item['root'].'time:'.date('y-m-d h:i',$value['time']);
 									$html.='<button type="button" class="reply btn btn-default">回复</button>';
 									$html.='<div class="reply_content">';
 										$html.='<textarea></textarea>';

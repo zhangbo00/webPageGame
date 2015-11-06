@@ -40,41 +40,25 @@
 			$url = $_SERVER['REQUEST_URI'];
 			$url = parse_url($url);
 			$page_html='';
-				$page_html .= "<nav><ul class='pagination'>";
-				for ($i=1; $i <=$this->total_page; $i++) {
-					if ($this->total_page == 1) {
-						$page_html .= "<li class='disabled'><span><span aria-hidden='true'>&laquo;</span></span></li>";
+			$page_html .= "<nav><ul class='pagination'>";
+			for ($i=1; $i <=$this->total_page; $i++) {
+				if ($this->total_page == 1) {
+					$page_html .= "<li class='disabled'><span><span aria-hidden='true'>&laquo;</span></span></li>";
+					$page_html .= "<li class='active'><span>1 <span class='sr-only'>$i</span></span></li>";
+					$page_html .= "<li class='disabled'><span><span aria-hidden='true'>&raquo;</span></span></li>";
+				} 
+				else {
+					$page_html .= "<li><span>1 <span class='sr-only'>&laquo;</span></span></li>";
+					if ($this->num_page==$i) {
 						$page_html .= "<li class='active'><span>1 <span class='sr-only'>$i</span></span></li>";
-						$page_html .= "<li class='disabled'><span><span aria-hidden='true'>&raquo;</span></span></li>";
-					} 
-					else {
-						$page_html .= "<li><span>1 <span class='sr-only'>&laquo;</span></span></li>";
-						if ($this->num_page==$i) {
-							$page_html .= "<li class='active'><span>1 <span class='sr-only'>$i</span></span></li>";
-						}
-						else {
-							$page_html .= "<li><span>1 <span class='sr-only'>$i</span></span></li>";
-						}
-						$page_html .= "<li><span>1 <span class='sr-only'>&raquo;</span></span></li>";
 					}
+					else {
+						$page_html .= "<li><span>1 <span class='sr-only'>$i</span></span></li>";
+					}
+					$page_html .= "<li><span>1 <span class='sr-only'>&raquo;</span></span></li>";
 				}
-				$page_html .= "</ul></nav>";
-				return $page_html;
-			if ($this->nums>$this->page_size) {
-/*				<nav>
-				  <ul class="pagination">
-				    <li class="disabled">
-				      <span>
-				        <span aria-hidden="true">&laquo;</span>
-				      </span>
-				    </li>
-				    <li class="active">
-				      <span>1 <span class="sr-only">(current)</span></span>
-				    </li>
-				    ...
-				  </ul>
-				</nav>*/
 			}
-
+			$page_html .= "</ul></nav>";
+			return $page_html;
 		}
 	}
