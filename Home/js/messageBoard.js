@@ -8,6 +8,7 @@ function getData (that) {
 	data['content'] = that.prev('textarea').val();
 	data['root'] = that.parents('.message_item').attr('message-id');
 	data['p_id'] = that.attr('message-id');
+	data['type'] = 1;
 	return data;
 }
 /**
@@ -30,7 +31,7 @@ function checkData (data) {
  * 失败弹出错误信息，成功页面刷新
  */
 function sendData (msg_data) {
-	$.post('handle.php?action=msgSubmit', {'content':msg_data['content'],'root':msg_data['root'],'p_id':msg_data['p_id']}, function (data) {
+	$.post('handle.php?action=msgSubmit', {'content':msg_data['content'],'root':msg_data['root'],'p_id':msg_data['p_id'],'type':msg_data['type']}, function (data) {
 		data = $.parseJSON(data);
 		if (data.code!=1) {
 			alert(data.message);
@@ -78,6 +79,7 @@ $(function () {
 		msg_data['content'] = $(this).prev('textarea').val();
 		msg_data['root'] = 0;
 		msg_data['p_id'] = 0;
+		msg_data['type'] = 0;
 		var check = checkData(msg_data)
 		if (check['code'] == 0){
 			alert(check['message']);
@@ -115,7 +117,7 @@ $(function () {
 				for (i = 0; i < data.length-1; i++) {
 					var html="";
 					html+='<li class="list-group-item">';
-					html+=data[i].nick+""+data[i].content+':'+data[i].root+'time:'+getTime(data[i].time,'-');
+					html+=data[i].nick+'<xmp>'+data[i].content+'</xmp>:'+data[i].root+'time:'+getTime(data[i].time,'-');
 					html+='<button type="button" class="reply btn btn-default">回复</button>';
 					html+='<div class="reply_content">';
 						html+='<textarea></textarea>';
