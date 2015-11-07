@@ -37,6 +37,8 @@
 			$stmt->bindParam(5, $time);
 			$stmt->bindParam(6,$receive['type']);
 			$result = $stmt->execute();
+			var_dump($receive);
+			var_dump($result);
 			if ($result > 0) {
 				if ($receive['type'] == 1) {
 					$update_query = "update message set reply=1 where id = $receive[p_id]";
