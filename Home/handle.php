@@ -37,20 +37,12 @@
 			$stmt->bindParam(5, $time);
 			$stmt->bindParam(6,$receive['type']);
 			$result = $stmt->execute();
-			var_dump($receive);
-			var_dump($result);
 			if ($result > 0) {
 				if ($receive['type'] == 1) {
 					$update_query = "update message set reply=1 where id = $receive[p_id]";
 					$update_res = $pdo->exec($update_query);
-					if ($update_res > 0) {
-						$ajax['code'] = 1;
-					}
-					else {
-						$ajax['code'] = 0;
-						$ajax['message'] = '请稍后再试';						
-					}
 				}
+				$ajax['code'] = 1;
 			} else {
 				$ajax['code'] = 0;
 				$ajax['message'] = '请稍后再试';

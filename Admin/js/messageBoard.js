@@ -3,7 +3,12 @@ $(function () {
 		var id = $(this).parents('tr').attr('id');
 		$.post('handle.php?action=message_del', {'id':id}, function (data) {
 			data = JSON.parse(data);
-			console.log(data);
+			if (data['code'] != 1) {
+				alert(data.message);
+			}
+			else {
+				window.location.reload();
+			}
 		})
 	})
 

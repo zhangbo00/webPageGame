@@ -96,7 +96,7 @@
 					$result['page_html'] = $page->show_page(); 
 					return $result;
 				}
-				getMessage(0,1);
+				getMessage(0,10);
 			?>
 			<div class="message">
 				<textarea style="width: 100%;height: 100px; resize: none" name="" plcaeholder"回复"></textarea>

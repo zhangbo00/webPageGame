@@ -36,7 +36,7 @@ function sendData (msg_data) {
 		if (data.code!=1) {
 			alert(data.message);
 		} else {
-			// window.location.reload();
+			window.location.reload();
 		}
 	})
 }
