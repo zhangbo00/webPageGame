@@ -39,7 +39,7 @@
 		{
 			if (empty($url)) {
 				$url = $_SERVER['REQUEST_URI'];
-				// $url = parse_url($url);
+				$url = parse_url($url);
 				$url = $url['path'];
 			}
 			$page_html='';

@@ -148,7 +148,7 @@ obj.url + '?' + obj.data : obj.url + '&' + obj.data;
 			data : {
 				'nick' : nick.value,
 				'pass' : pass.value,
-				'phone' : pass.value	
+				'phone' : phone.value	
 			},
 			success : function (data) {
 				data = JSON.parse(data);

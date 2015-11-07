@@ -39,20 +39,23 @@
 								$html.='</div>';
 							$html.='</div>';
 							$html.='<ul class="list-group">';
+
 							if ($anwser=getItem($value['id'],5)) {
-								$i = 0;
-								foreach ($anwser['messages'] as $key => $item) {
-									$html.='<li class="list-group-item">';
-									$html.=$item['nick'].'<xmp>'.$item['content'].'</xmp>:'.$item['root'].'time:'.date('y-m-d h:i',$value['time']);
-									$html.='<button type="button" class="reply btn btn-default">回复</button>';
-									$html.='<div class="reply_content">';
-										$html.='<textarea></textarea>';
-										$html.='<button type="button" class="submit btn btn-default" message-id='.$item['id'].'>提交</button>';
-									$html.='</div>';
-									$html.='</li>';
-									$i++;
-									if ($i==5) {
-										$html.='<li class="list-group-item load_more">查看更多</li>';
+								if ($anwser['messages']) {
+									$i = 0;
+									foreach ($anwser['messages'] as $key => $item) {
+										$html.='<li class="list-group-item">';
+										$html.=$item['nick'].'<xmp>'.$item['content'].'</xmp>:'.$item['root'].'time:'.date('y-m-d h:i',$value['time']);
+										$html.='<button type="button" class="reply btn btn-default">回复</button>';
+										$html.='<div class="reply_content">';
+											$html.='<textarea></textarea>';
+											$html.='<button type="button" class="submit btn btn-default" message-id='.$item['id'].'>提交</button>';
+										$html.='</div>';
+										$html.='</li>';
+										$i++;
+										if ($i==5) {
+											$html.='<li class="list-group-item load_more">查看更多</li>';
+										}
 									}
 								}
 							}

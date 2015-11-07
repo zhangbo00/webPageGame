@@ -4,9 +4,18 @@
 	$confirm_password=$_POST['confirm_password'];			//确认密码（confirm_password）
 	$email=$_POST['email'];														//电子邮箱（email）	
 	$mobiel=$_POST['mobiel'];													//手机号（mobile）
+	$head_img=$_FILES['head_img'];
+    var_dump($head_img);
+	echo $head_img['tmp_name'];
+	
 
-	$head_img=$_FILES['head_img']['name'];								
-	define('UPLODEPATH', '/head_img');
+/*	if(empty($head_img)){
+		echo "true";
+	}else{
+		echo "false";
+	}*/
+
+	/*define('UPLODEPATH', '../public/head_img');
 
 	check();
 //PHP验证注册信息
@@ -65,7 +74,9 @@ function insertData(){
 	global $email;
 	global $mobiel;
 	$dbc = mysqli_connect('localhost','root','','geekstudio') or die("Error connecting to MySQL server.");
-	if (!empty(head_img)) {
+	
+
+	if (!empty($head_img)) {
 	$path = UPLODEPATH.$head_img;
 		if(move_uploaded_file($_FILES['head_img']['tmp_name'],$path)){
 			$query = "SELECT * FROM user WHERE email='$email' or nick='$nick'";
@@ -74,6 +85,7 @@ function insertData(){
 	}else{
 		$query = "SELECT * FROM user WHERE email='$email' or nick='$nick'";
 	}
+	$query = "SELECT * FROM user WHERE email='$email' or nick='$nick'";
 	$result = mysqli_query($dbc,$query);
 	if($result->num_rows>=1){
 		echo "	<span style='font-size:70px;display:block;text-align:center;margin-top:20%;'>注册失败，邮箱或昵称已存在！ $nick</span>";
@@ -98,9 +110,9 @@ function insertData(){
 			setInterval(Clock, 1000);
 		</script>
 	";}
-	echo $a;
+	//echo $a;
 	
-}
+}*/
 
 	
 ?>

@@ -5,7 +5,6 @@
 
 	$user_nick = $_COOKIE['nick'];
 
-
 	$dbc = mysqli_connect('localhost','root','','geekstudio') or die("Error connecting to MySQL server.");
 	$query = "UPDATE user SET nick='$new_nick',pass=SHA('$new_pass'),mobile='$new_phone' WHERE nick='$user_nick'";
 	$result = mysqli_query($dbc,$query);
