@@ -127,7 +127,7 @@ var oLtime = function login_time(){
 				if(data.code==1){
 					var msg = document.getElementById('message');
 					var text_login = document.getElementById('text_login');
-					var user_center = document.getElementById('user_center');
+
 
 					msg.innerHTML=data.message;
 					setTimeout(oLtime,2000);
@@ -159,8 +159,7 @@ var oLtime = function login_time(){
 	}
 
 	user_center.onclick=function(){
-		alert(12312);
-
+		window.open("http://localhost/webPageGame/Home/user_center.html");
 	}
 
 /*=============================================轮播==========================================*/

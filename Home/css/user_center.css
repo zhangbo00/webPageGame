@@ -8,12 +8,12 @@ height:100%;
 	position: absolute;
 	text-align: center;
 	margin-top:200px; 
-	background: pink;
+	/*background: pink;*/
 }
 #info{
 	width: 600px;
 	height: 100%;
-	background: #fff;
+	/*background: #fff;*/
 	margin:0 auto;
 	text-align: center;
 }
@@ -34,7 +34,7 @@ height:100%;
 	font-size: 25px;
 	font-family: Microsoft Yahei;
 	font-weight: 100;
-	padding: 18px;
+	padding:18px;
 }
 .msg{
 	width: 200px;
@@ -44,6 +44,9 @@ height:100%;
 	border:1px solid #ccc;
 	border-radius: 5px;
 }
+
+
+
 #btn_wrap{
 	width: 100%;
 	height: 44px;
@@ -61,6 +64,7 @@ height:100%;
 	display: inline-block;
 	cursor: pointer; 
 	transition:all 1s ease;
+	font-family: Microsoft Yahei;
 }
 
 #reset{
@@ -72,11 +76,14 @@ height:100%;
 	display: inline-block;
 	cursor: pointer; 
 	transition:all 1s ease;
+	font-family: Microsoft Yahei;
 }
 
 #commit:hover{
 	background: rgba(0,255,0,0.5);
+	border-radius: 100%;
 }
 #reset:hover{	
 	background: rgba(0,255,0,0.5);
+	border-radius: 100%;
 }

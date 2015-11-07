@@ -7,8 +7,8 @@
  </head>
  <body>
 	<p class="title">用户注册</p>
-	<form method="post" action="user_register.php">
-
+	<form  method="post" action="user_register.php">
+		<input type="hidden" name="MAX_FILE_SIZE" value="3145728"/>   <!-- 3M的图 -->
 		<table class="user_register" cellpadding="0" cellspacing="0">
 			<tbody>
 				<tr>
@@ -19,8 +19,6 @@
 					<input type="text" id="nick" name="nick" class="value_text"/>
 					</td>
 				</tr>
-
-
 
 				<tr>
 					<td class="field_name">
@@ -56,6 +54,12 @@
 					<td class="field_value">
 					<input type="text" id="mobiel" name="mobiel" class="value_text"/>
 					</td>
+				</tr>
+				<tr>
+					<td class="field_name">
+					<label for="head_img">头像：</label>
+					</td>
+					<td ><input type="file" id="head_img" name="head_img"></td>
 				</tr>
 			</tbody>
 		</table>
