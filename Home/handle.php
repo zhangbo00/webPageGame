@@ -29,15 +29,26 @@
 		}
 		else {
 			$time = time();
-			$stmt = $pdo->prepare("insert into message (u_id,p_id,root,content,time) values (?,?,?,?,?)");
+			$stmt = $pdo->prepare("insert into message (u_id,p_id,root,content,time,type) values (?,?,?,?,?,?)");
 			$stmt->bindParam(1, $receive['u_id']);
 			$stmt->bindParam(2,$receive['p_id']);
 			$stmt->bindParam(3,$receive['root']);
 			$stmt->bindParam(4, $receive['content']);
 			$stmt->bindParam(5, $time);
+			$stmt->bindParam(6,$receive['type']);
 			$result = $stmt->execute();
 			if ($result > 0) {
-				$ajax['code'] = 1;
+				if ($receive['type'] == 1) {
+					$update_query = "update message set reply=1 where id = $receive[p_id]";
+					$update_res = $pdo->exec($update_query);
+					if ($update_res > 0) {
+						$ajax['code'] = 1;
+					}
+					else {
+						$ajax['code'] = 0;
+						$ajax['message'] = '请稍后再试';						
+					}
+				}
 			} else {
 				$ajax['code'] = 0;
 				$ajax['message'] = '请稍后再试';
@@ -45,7 +56,6 @@
 		}
 		echo json_encode($ajax);
 	}
-
 
 	function msgSubmit_copy($receive)
 	{

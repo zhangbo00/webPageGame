@@ -65,27 +65,18 @@
         <div class="page">
         <div class="header">
         <div class="box">
+        <ul class='event_year'>
         <?php 
           require ('../public/mysql_pdo.php');  //连接数据库
-          echo "<ul class='event_year'>";
-          //按年分组查询
-          //$str = "SELECT year,time,COUNT(*) as n FROM course GROUP BY YEAR;";
-          $str = "SELECT * FROM course order by date;";
+          $str = "SELECT * FROM course where status=1 order by date;";
           $r=$pdo-> query ( $str );
-          // foreach ( $r as  $key => $value ) {
-          //   print_r($value);
-          //     echo ;
-          //     echo strtotime($value['year']."/".$value['time']);
-            
-          // }
           echo "</ul><ul class='event_list'>";
           $old = 0;
           //获取内容
           foreach ( $r as  $key => $value ) {
-            
-            //echo $key."/////////////";
             $year = (int)date('Y',$value['date']);
             $time = date('n月j日',$value['date']);
+
             if($year > $old){
               if($old != 0){
                 echo "</div>";
@@ -96,32 +87,14 @@
               </script>';
               $old = $year;
             }
-              
-              //echo "***********";
-              echo "<li><span>".$time."</span><p><span>".$value['content']."</span></p></li>";
-            
-          }  
-          if($old){
-          echo "</div>";                       
-          }
-/*            $str = "select * from course;";     //查询历程
-              echo "查询数据库历程信息<br>";
-              foreach ( $pdo-> query ( $str ) as  $row ) {
-                  echo "id:   ".$row['id']." ; " ;
-                  echo "year: ".$row['year']." ; ";
-                  echo "time: ".$row['time']." ; ";
-                  echo "content: ".$row['content']." ;";
-                  echo "status: ".$row['status']."<br>";
-              }*/
 
-/*              echo "<br>查询数据库成员信息<br>";
-              $str = "select * from members;";    //查询成员
-              foreach ( $pdo-> query ( $str ) as  $row ) {
-                  echo  $row [ 'id' ] .  " : " ;
-                  echo $row['summary']."<br>";
-              }*/
-             ?>
-          
+            echo "<li><span>".$time."</span><p><span>".$value['content']."</span></p></li>"; 
+          }
+
+          if($old){
+            echo "</div>";                       
+          }
+          ?>
           </ul>
           <div class="clearfix"></div>
         </div>
@@ -132,7 +105,7 @@
       <div role="tabpanel" class="tab-pane" id="title_3">
         <ul class="about_members">
           <?php
-            $str = "select * from members;";     //查询成员
+            $str = "select * from members where status=1;";     //查询成员
             $q=$pdo-> query ($str);
             foreach ($q as  $row ) {
               echo "<li>";
@@ -142,16 +115,6 @@
               echo "</div></li>";
             }
            ?>
-          <!--  介绍 ***** HTML示范
-          <li>
-            <div class="img_box img_box_left"><img src="images/sy_50382172896.jpg" alt=""></div>
-            <div class="members_text members_text_left">
-              <h2>姓名</h2>
-              <h3>工作</h3>
-              <p>个人简介</p>
-            </div>
-          </li>
-          -->
         </ul>
       </div>
     </div>

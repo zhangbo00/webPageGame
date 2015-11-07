@@ -20,9 +20,9 @@
 				/**
 				 * 取得留言
 				 */
-				function getMessage()
+				function getMessage($root,$limit)
 				{
-					$result=getItem();
+					$result=getItem($root,$limit);
 					asort($result['messages']);
 					$html='';
 					foreach ($result['messages'] as $key => $value) {
@@ -79,7 +79,7 @@
 					return $messages;
 				}*/
 
-				function getItem($root=0,$limit=20)
+				function getItem($root,$limit)
 				{
 					global $pdo;
 					$sql = "select count(*) as count from message as m left join user as u on m.u_id=u.id where m.status=1 and root=$root order by time desc limit $limit";
@@ -93,7 +93,7 @@
 					$result['page_html'] = $page->show_page(); 
 					return $result;
 				}
-				getMessage(0,10);
+				getMessage(0,1);
 			?>
 			<div class="message">
 				<textarea style="width: 100%;height: 100px; resize: none" name="" plcaeholder"回复"></textarea>

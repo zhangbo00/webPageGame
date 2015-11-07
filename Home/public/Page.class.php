@@ -37,28 +37,24 @@
 		}
 		function show_page()
 		{
-			$url = $_SERVER['REQUEST_URI'];
-			$url = parse_url($url);
+			if (empty($url)) {
+				$url = $_SERVER['REQUEST_URI'];
+				$url = parse_url($url);
+				$url = $url['path'];
+			}
 			$page_html='';
 			$page_html .= "<nav><ul class='pagination'>";
+			$page_html .= '<li><a href='.$url.'?page=1><span><span aria-hidden=true>&laquo;</span></span></a></li>';
 			for ($i=1; $i <=$this->total_page; $i++) {
-				if ($this->total_page == 1) {
-					$page_html .= "<li class='disabled'><span><span aria-hidden='true'>&laquo;</span></span></li>";
-					$page_html .= "<li class='active'><span>1 <span class='sr-only'>$i</span></span></li>";
-					$page_html .= "<li class='disabled'><span><span aria-hidden='true'>&raquo;</span></span></li>";
-				} 
+				if ($this->num_page==$i) {
+					$page_html .= '<li class=active><a href='.$url.'?page='.$i.'><span>'.$i.'<span class=sr-only>'.$i.'</span></span></a></li>';
+				}
 				else {
-					$page_html .= "<li><span>1 <span class='sr-only'>&laquo;</span></span></li>";
-					if ($this->num_page==$i) {
-						$page_html .= "<li class='active'><span>1 <span class='sr-only'>$i</span></span></li>";
-					}
-					else {
-						$page_html .= "<li><span>1 <span class='sr-only'>$i</span></span></li>";
-					}
-					$page_html .= "<li><span>1 <span class='sr-only'>&raquo;</span></span></li>";
+					$page_html .= '<li><a href='.$url.'?page='.$i.'><span>'.$i.'<span class=sr-only>'.$i.'</span></span></a></li>';
 				}
 			}
-			$page_html .= "</ul></nav>";
+			$page_html .= '<li><a href='.$url.'?page='.$this->total_page.'><span><span aria-hidden=true>&raquo;</span></span></a></li>';
+			$page_html .= '</ul></nav>';
 			return $page_html;
 		}
 	}
