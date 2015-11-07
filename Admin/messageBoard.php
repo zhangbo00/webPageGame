@@ -8,28 +8,42 @@
 	<link rel="stylesheet" type="text/css" href="css/messageBoard.css">
 </head>
 	<div class="main">
-		<div class="container">
-			<div class="message_item panel panel-default">
-				<div class="message_info panel-heading">
-					留言区
-				</div>
-				<div class="reply panel-body">
-					互相回复区
-					更多内容
-				</div>
-				<ul class="list-group">
-				  <li class="list-group-item">Cras justo odio</li>
-				  <li class="list-group-item">Dapibus ac facilisis in</li>
-				  <li class="list-group-item">Morbi leo risus</li>
-				  <li class="list-group-item">Porta ac consectetur ac</li>
-				  <li class="list-group-item">Vestibulum at eros</li>
-				</ul>
-			</div>
-			<div class="message">
-				<textarea style="width: 100%;height: 100px; resize: none" name="" plcaeholder"请输入"></textarea>
-				<button class="btn btn-info" type="button">留言</button>		
-			</div>
-		</div>
+	<?php
+		require_once('public/Page.class.php');
+		$count_rs = $pdo->query('select count(*) as num from user as u left join message as m on u.id = m.u_id where u.status = 1 and m.p_id=0 and m.status=1');
+		$count = $count_rs->fetch();
+		$page = new Page(20, $count['num']);
+		$select = 'u.account,u.nick,u.head_img,u.email,m.id,m.content,m.time from user as u left join message as m on u.id = m.u_id where u.status = 1 and m.p_id=0 and m.status=1 order by m.time desc';
+		$page_result = $page->show_page_result($select);
+		$show_page = $page->show_page();
+		if ($page_result) {
+			$html = '';
+			$html .= '<table class="table table-striped table-bordered">';
+			$html .= '<thead>';
+			$html .= '<th>序号</th>';
+			$html .= '<th>账户</th>';
+			$html .= '<th>内容</th>';
+			$html .= '<th>时间</th>';
+			$html .= '<th>操作</th>';
+			$html .= '</thead>';
+			$html .= '<tbody>';
+			$i = 0;
+			foreach ($page_result as $key => $value) {
+				$i ++;
+				$html .= '<tr id='.$value['id'].'>';
+				$html .= '<th>'.$i.'</th>';
+				$html .= '<th>'.$value['account'].'</th>';
+				$html .= '<th><xmp>'.$value['content'].'</xmp></th>';
+				$html .= '<th>'.date('y-m-d h:i',$value['time']).'</th>';
+				$html .= '<th><span class="glyphicon glyphicon-remove btn-lg"></span><span class="glyphicon glyphicon-pencil btn-lg"></span></th>';
+				$html .= '</tr>';
+			}
+			$html .= '</tbody>';
+			$html .= '</table>';
+			$html .= $show_page;
+			echo $html;
+		}
+	?>
 	</div>
 </body>
 	<script type="text/javascript" src="../public/jquery-1.10.2.min.js"></script>
