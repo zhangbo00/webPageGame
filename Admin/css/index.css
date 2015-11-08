@@ -1,3 +1,15 @@
 div{
 	margin: 0 auto;
 }
+.navigation{
+	float: left;
+	margin-left: 10%;
+}
+.navigation ul{
+	list-style-type: none;
+}
+.navigation ul li{
+	display: inline;
+	width: 200px;
+	margin-left: 10px;
+}

@@ -13,29 +13,22 @@
 <body>
 	<h1>geek studio 后台管理系统</h1>
 	<h1>站内搜索</h1>
-	<div>
+	<div class="navigation">
 		<ul>
 			<li><h2>用户管理</h2></li>
 			<li><a href="">查询</a></li>
-		</ul>
-		
-		<ul>
+
 			<li><h2>留言板管理</h2></li>
 			<li><a href="message_answer.php">回复</a></li>
 			<li><a href="messageBoard.php">管理</a></li>
-		</ul>
 
-		<ul>
 			<li><h2>相册</h2></li>
 			<li><a href="">未定</a></li>
-		</ul>
 
-		<ul>
 			<li><h2>文章管理</h2></li>
 			<li><a href="article.php">已有文章管理</a></li>
 			<li><a href="addArticle.php">添加文章</a></li>
-		</ul>
-		<ul>
+
 			<li><h2>关于公司管理</h2></li></li>
 			<li><a href="">公司介绍</a></li>
 			<li><a href="">公司文化</a></li>
