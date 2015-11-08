@@ -170,7 +170,7 @@ var oLtime = function login_time(){
 		function init(len){
 
 			var ul = document.getElementById("ul");
-			var width = 1400/len;
+			var width = 1400/len;	
 			var uHTML = "",pHTML="",zHTML="",z=0,tHTML="";
 
 			for(var i=0;i<len;i++){

@@ -8,10 +8,20 @@
     <script type="text/javascript" src="../../public/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../../public/bootstrap/js/bootstrap.min.js"></script>
     <!--自我独有引用部分-->
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/setAbout.css">
     <script type="text/javascript" src="../js/setAbout.js"></script>
+    <style>
+		.body{
+			width: 800px;
+		}
+    </style>
 </head>
 <body>
+	<?php 
+		require('header.php');
+	 ?>
+	<div class="body">
 	<?php
 		require ('../../public/mysql_pdo.php');
 		if(isset($_GET['name'])){
@@ -25,7 +35,7 @@
 				}
 			}
 			else if($_GET['type']== 1){							//modify
-				$str = "UPDATE members SET work = '修改测试' WHERE id=$_GET[id];";
+				$str = "UPDATE members SET name='".$_GET[name]."',work = '".$_GET[work]."'  WHERE id=$_GET[id];";
 				$r=$pdo-> query ( $str );
 				if($r){
 					echo "修改".$_GET['id']."成功";
@@ -122,8 +132,8 @@
 		?>
 		
 		</ul>
+	</div>	
 	</div>
-	
 </body>
 	<script type="text/javascript">
 		$(function () {
