@@ -2,11 +2,19 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>留言管理</title>
 	<link rel="stylesheet" type="text/css" href="../public/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="public/public.css">
 	<link rel="stylesheet" type="text/css" href="css/messageBoard.css">
+
+	<link rel="stylesheet" href="css/index.css">
+
 </head>
+<body>
+	<?php 
+		require 'header.php';
+	 ?>
+	<div class="body">
 	<div class="main">
 	<?php
 		require_once('public/Page.class.php');
@@ -44,6 +52,7 @@
 			echo $html;
 		}
 	?>
+	</div>
 	</div>
 </body>
 	<script type="text/javascript" src="../public/jquery-1.10.2.min.js"></script>

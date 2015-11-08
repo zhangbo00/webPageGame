@@ -7,6 +7,8 @@
     <script type="text/javascript" charset="utf-8" src="Article/ueditor.config.js"></script>
     <script type="text/javascript" charset="utf-8" src="Article/ueditor.all.min.js"> </script>
     <script type="text/javascript" charset="utf-8" src="Article/lang/zh-cn/zh-cn.js"></script>
+    <link rel="stylesheet" type="text/css" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
 
     <style type="text/css">
         .clear {
@@ -15,7 +17,10 @@
     </style>
 </head>
 <body>
-<div>
+    <?php 
+        require 'header.php';
+     ?>
+<div class="body">
     <?php
         require ('../public/mysql_pdo.php');
         if(!empty($_GET['title']) and !empty($_GET['editorValue'])){

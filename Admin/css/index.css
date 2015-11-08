@@ -1,5 +1,5 @@
-div{
-	margin: 0 auto;
+.header{
+	text-align: center;
 }
 .navigation{
 	float: left;
@@ -7,9 +7,13 @@ div{
 }
 .navigation ul{
 	list-style-type: none;
-}
-.navigation ul li{
-	display: inline;
 	width: 200px;
-	margin-left: 10px;
+}
+.navigation ul li h3 , .navigation ul li h5{
+	width: 200px;
+}
+.body{
+    float: left;
+    padding-top: 50px;
+    padding-left: 50px;
 }

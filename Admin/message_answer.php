@@ -6,8 +6,20 @@
 	<link rel="stylesheet" type="text/css" href="../public/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="public/public.css">
 	<link rel="stylesheet" type="text/css" href="css/message_answer.css">
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+	    .body{
+	        float: left;
+	        padding-top: 50px;
+	        padding-left: 50px;
+	    }
+	</style>
 </head>
 <body>
+	<?php 
+		require 'header.php';
+	 ?>
+	<div class="body">
 	<div class="main">
 		<div class="continer">
 			<?php
@@ -47,6 +59,7 @@
 				<button class="btn btn-info" type="button">留言</button>		
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 	<script type="text/javascript" src="../public/jquery-1.10.2.min.js"></script>
