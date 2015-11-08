@@ -38,5 +38,8 @@
 			<li><a href="setAbout/setMembers.php">成员：管理</a></li>
 		</ul>
 	</div>
+	<div class="body">
+		<h1>欢迎使用</h1>
+	</div>
 </body>
 </html>
