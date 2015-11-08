@@ -13,9 +13,15 @@
     <script type="text/javascript" src="js/about.js"></script>
     <link rel="shortcut icon" href="http://static.tmimgcdn.com/img/favicon.ico">
     <link rel="icon" href="http://static.tmimgcdn.com/img/favicon.ico">
+    <?php
+      echo "<link href='public/public.css' type='text/css' rel='stylesheet' />"
+    ?>
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
   
+  <?php
+  require_once('public/header.html');
+?>
   <div>
     <!-- Nav tabs -->
     <div id="about_title">

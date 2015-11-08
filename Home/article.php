@@ -26,7 +26,6 @@
             require ('../public/mysql_pdo.php');
             $str = "SELECT * FROM article WHERE STATUS=1;";
             $r=$pdo-> query ( $str );
-            htmlspecialchars_decode(string)
             foreach ($r as $key => $value) {
                 $time = date("Y-n-j G:i:s",$value['date']);
                 echo "<tr id=".$value['id'].">";

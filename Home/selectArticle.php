@@ -1,36 +1,24 @@
-<?php
-    /**
-     * 执行对应操作
-     *查询，点赞
-     */
-    if (!empty($_GET['action'])) {
-        $action = $_GET['action'];
-        $receive = $_POST; 
-        if (function_exists($action)) {
-            require_once('../public/mysql_pdo.php');
-            $action($receive);
-        } else {
-            echo "方法不存在";
-        }
-    }
-
-    function select($receive)
-    {
-        global $pdo;
-        $str = "SELECT * FROM article WHERE STATUS=1 and id=".$_GET['id'].";";
-        $r=$pdo-> query ( $str );
-        if ($r) {
-           foreach ($r as $key => $value) {
-                $ajax['code']=1;
-                $ajax['title']=$value['title'];
-                $time = date("Y-n-j G:i:s",$value['date']);
-                $ajax['date']=$time;
-                $ajax['content']=$value['content'];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章阅览</title>
+</head>
+<body>
+    <div class="text">
+        <?php 
+            require ('../public/mysql_pdo.php');  //连接数据库
+            $str = "SELECT * FROM article where status=1 and id=".$_GET['id'].";";
+            $r=$pdo-> query ( $str );
+            foreach ($r as $key => $value) {
+                echo "<h1>$value[title]</h1>";
+                $time=date("Y-n-d",$value['date']);
+                echo "<h2>$time</h2>";
+                echo "<div class='content'>";
+                echo "<h1>$value[content]</h1>";
+                echo "</div>";  
             }
-        }
-        else {
-            $ajax['code'] = 0;
-            $ajax['message'] = '请稍后再试';
-        }
-        echo json_encode($ajax);
-    }
+         ?>
+    </div>
+</body>
+</html>
