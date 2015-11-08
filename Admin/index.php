@@ -21,13 +21,12 @@
 		
 		<ul>
 			<li><h2>留言板管理</h2></li>
-			<li><a href="">回复</a></li>
-			<li><a href="">管理</a></li>
+			<li><a href="message_answer.php">回复</a></li>
+			<li><a href="messageBoard.php">管理</a></li>
 		</ul>
 
 		<ul>
 			<li><h2>相册</h2></li>
-			<li><a href="">管理</a></li>
 			<li><a href="">未定</a></li>
 		</ul>
 
@@ -35,8 +34,6 @@
 			<li><h2>文章管理</h2></li>
 			<li><a href="article.php">已有文章管理</a></li>
 			<li><a href="addArticle.php">添加文章</a></li>
-			<li><a href="">修改</a></li>
-			<li><a href="">删除</a></li>
 		</ul>
 		<ul>
 			<li><h2>关于公司管理</h2></li></li>
@@ -44,16 +41,9 @@
 			<li><a href="">公司文化</a></li>
 
 			<li><h4>历程</h4></li>
-			<li><a href="setAbout/setCourse.php">历程：查阅</a></li>
-			<li><a href="setAbout/setCourse.php">历程：添加</a></li>
-			<li><a href="setAbout/setCourse.php">历程：修改</a></li>
-			<li><a href="setAbout/setCourse.php">历程：删除</a></li>
-
+			<li><a href="setAbout/setCourse.php">历程：管理</a></li>
 			<li><h4>成员</h4></li>
-			<li><a href="setAbout/setMembers.php">成员：查阅</a></li>
-			<li><a href="">成员：添加</a></li>
-			<li><a href="">成员：修改</a></li>
-			<li><a href="">成员：删除</a></li>
+			<li><a href="setAbout/setMembers.php">成员：管理</a></li>
 		</ul>
 	</div>
 </body>

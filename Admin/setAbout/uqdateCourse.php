@@ -5,5 +5,6 @@
     $r=$pdo-> query ( $str );
 	if($r)	echo "修改成功<br>";
 	else 	echo "修改失败<br>";
-	echo $_GET['date']."************".$_GET['id'];
+	echo '<a href="setCourse.php">返回</a>';
+
 ?>

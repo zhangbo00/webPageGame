@@ -7,6 +7,7 @@
 		if($r)	echo "修改".$value."成功<br>";
 		else 	echo "修改".$value."失败<br>";
 	}
+	echo '<a href="setCourse.php">返回</a>';
 
 /*   	$str = "UPDATE course SET DATE=".time($_GET['date'])." , content='".$_GET['content']."' WHERE id=".$_GET['id'].";";
     $r=$pdo-> query ( $str );

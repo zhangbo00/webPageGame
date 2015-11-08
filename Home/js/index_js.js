@@ -2,6 +2,7 @@ window.onload = function(){
 	var oBtn_login=document.getElementById('btn_login');		//这个是导航的登录按钮
 	var oBtn_close_login=document.getElementById('close_login');			//这个是登录框的关闭按钮
 	var oShadown_bg=document.getElementById('shadown_bg');			//这个是遮罩层
+	var lgn = document.getElementById('lgn');
 	
 	var oLogin_btn=document.getElementById('login_btn');			//这个是登录按钮
 	var oSin_in_btn=document.getElementById('sign_in_btn');		//这个是注册按钮
@@ -300,4 +301,13 @@ function removeCookie(name)
 {
 	setCookie(name, 1, -1);
 }
+
+oShadown_bg.onclick=function(){
+	oShadown_bg.style.display='none';
+}
+lgn.onclick=function(){
+	return false;
+}
+
+
 }
