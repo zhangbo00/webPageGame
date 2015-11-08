@@ -27,7 +27,8 @@
             // echo $_GET['title']."  :标题******<br>";
             // echo $_GET['editorValue']."  :editorValue******<br>";
             $time=time();
-            $str="INSERT INTO article(title,admin_id,DATE,content) VALUES('".$_GET['title']."',3,".$time.",'".$_GET['editorValue']."');";
+            $str="INSERT INTO article(title,a_id,DATE,content) VALUES('".$_GET['title']."',3,".$time.",'".$_GET['editorValue']."');";
+            var_dump($str);
             $r=$pdo-> query ( $str );
             if($r)  echo "添加".$_GET['title']."成功<br>";
             else    echo "添加".$_GET['title']."失败<br>";

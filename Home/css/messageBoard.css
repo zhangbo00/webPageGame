@@ -1,6 +1,5 @@
 .main{
 	width: 100%;
-	height: 500px;
 	background: #fcc;
 }
 .reply_content{
@@ -10,4 +9,7 @@
 	resize:none;
 	width: 50%;
 	height: 50px;
+}
+.list-group-item{
+	padding: 10 30px !important;
 }
