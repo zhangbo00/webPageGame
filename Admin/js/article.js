@@ -15,6 +15,7 @@ $(function () {
 		})
 	})
 	$(".glyphicon-pencil").click(function (){
-		alert("sdafjkjfds");
+		var id = $(this).parents('tr').attr('id');
+		window.location.href="setArticle.php?id="+id;
 	})
 });
