@@ -40,20 +40,23 @@
 			if (empty($url)) {
 				$url = $_SERVER['REQUEST_URI'];
 				$url = parse_url($url);
-				$url = $url['path'];
+			}
+			$query='';
+			if (!empty($url['query'])) {
+				$query='&'.$url['query'];
 			}
 			$page_html='';
 			$page_html .= "<nav><ul class='pagination'>";
-			$page_html .= '<li><a href='.$url.'?page=1><span><span aria-hidden=true>&laquo;</span></span></a></li>';
+			$page_html .= '<li><a href='.$url['path'].'?page=1><span><span aria-hidden=true>&laquo;</span></span></a></li>';
 			for ($i=1; $i <=$this->total_page; $i++) {
 				if ($this->num_page==$i) {
-					$page_html .= '<li class=active><a href='.$url.'?page='.$i.'><span>'.$i.'<span class=sr-only>'.$i.'</span></span></a></li>';
+					$page_html .= '<li class=active><a href='.$url['path'].'?page='.$i.''.$query.'><span>'.$i.'<span class=sr-only>'.$i.'</span></span></a></li>';
 				}
 				else {
-					$page_html .= '<li><a href='.$url.'?page='.$i.'><span>'.$i.'<span class=sr-only>'.$i.'</span></span></a></li>';
+					$page_html .= '<li><a href='.$url['path'].'?page='.$i.''.$query.'><span>'.$i.'<span class=sr-only>'.$i.'</span></span></a></li>';
 				}
 			}
-			$page_html .= '<li><a href='.$url.'?page='.$this->total_page.'><span><span aria-hidden=true>&raquo;</span></span></a></li>';
+			$page_html .= '<li><a href='.$url['path'].'?page='.$this->total_page.''.$query.'><span><span aria-hidden=true>&raquo;</span></span></a></li>';
 			$page_html .= '</ul></nav>';
 			return $page_html;
 		}
