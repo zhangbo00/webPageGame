@@ -1,7 +1,6 @@
-.main{
-	width: 100%;
-	height: 500px;
-	background: #fcc;
+.body{
+	min-height: 500px;
+	width: 70%;
 }
 .reply_content{
 	display: none;
@@ -10,4 +9,14 @@
 	resize:none;
 	width: 50%;
 	height: 50px;
+}
+.left{
+	text-align: left;
+}
+.right{
+	text-align: right;
+}
+nav{
+	text-align: right;
+	padding: 20px;
 }

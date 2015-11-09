@@ -13,6 +13,14 @@
 		}	*/ 
 		
 		$row = mysqli_fetch_array($result);
+<<<<<<< HEAD
+=======
+		Session_start();
+		$_SESSION['account'] = $row['account'];
+		$_SESSION['id'] = $row['id'];
+		$_SESSION['head_img'] = $row['head_img'];
+		
+>>>>>>> tmp
 		$ajax['code']=1;
 		$ajax['message']="登录成功！2秒后跳转！";
 		$ajax['nick']=$row['nick'];

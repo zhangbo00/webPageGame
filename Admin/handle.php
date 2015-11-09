@@ -50,9 +50,7 @@
 				if ($receive['type'] == 1) {
 					$update_query = "update message set reply=1 where id = $receive[p_id]";
 					$update_res = $pdo->exec($update_query);
-					if ($update_res > 0) {
-						$ajax['code'] = 1;
-					}
+					$ajax['code'] = 1;
 				}
 			} else {
 				$ajax['code'] = 0;

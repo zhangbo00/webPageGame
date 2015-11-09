@@ -150,6 +150,10 @@ var str_user_name = user_name.value;
 		if (confirm("你确定退出吗？")) {
 			removeCookie('nick');
 			removeCookie('pass');
+			ajax({
+				url:'http://localhost/webPageGame/Home/logout.php',
+			})
+			return;
 			user_exit.style.display="none";
 			text_login.innerHTML = "您没有登录!";
 			user_center.style.display="none";
@@ -310,6 +314,19 @@ oShadown_bg.onclick=function(){
 lgn.onclick=function(e){
 	console.log(e);
 	stopEventBubble(e);
+<<<<<<< HEAD
+}
+
+function stopEventBubble(event){
+    var e=event || window.event;
+    if (e && e.stopPropagation){
+        e.stopPropagation();    
+    }
+    else{
+        e.cancelBubble=true;
+    }
+=======
+>>>>>>> tmp
 }
 
 function stopEventBubble(event){
@@ -321,6 +338,4 @@ function stopEventBubble(event){
         e.cancelBubble=true;
     }
 }
-
-
 }
