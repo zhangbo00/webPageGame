@@ -152,6 +152,10 @@ var oLtime = function login_time(){
 		if (confirm("你确定退出吗？")) {
 			removeCookie('nick');
 			removeCookie('pass');
+			ajax({
+				url:'http://localhost/webPageGame/Home/logout.php',
+			})
+			return;
 			user_exit.style.display="none";
 			text_login.innerHTML = "您没有登录!";
 			user_center.style.display="none";
@@ -312,12 +316,12 @@ lgn.onclick=function(e){
 }
 
 function stopEventBubble(event){
-        var e=event || window.event;
-        if (e && e.stopPropagation){
-            e.stopPropagation();    
-        }
-        else{
-            e.cancelBubble=true;
-        }
+    var e=event || window.event;
+    if (e && e.stopPropagation){
+        e.stopPropagation();    
     }
+    else{
+        e.cancelBubble=true;
+    }
+}
 }

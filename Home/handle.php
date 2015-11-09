@@ -1,10 +1,18 @@
 <?php
+	session_start();
+	if (empty($_SESSION['id'])) {
+		$ajax['code'] =0;
+		$ajax['message'] = "请先登录"; 
+		echo json_encode($ajax);
+		return;
+	}
 	/**
 	 * 执行对应操作
 	 */
 	if (!empty($_GET['action'])) {
 		$action = $_GET['action'];
 		$receive = $_POST; 
+		$receive['u_id']=$_SESSION['id'];
 		if (function_exists($action)) {
 			require_once('../public/mysql_pdo.php');
 			$action($receive);
@@ -21,8 +29,6 @@
 	function msgSubmit($receive)
 	{	
 		global $pdo;
-		// 暂无session
-		$receive['u_id'] = 1; 
 		if (strlen($receive['content'])==0) {
 			$ajax['code'] = 0;
 			$ajax['message'] = '不能为空';
@@ -54,8 +60,6 @@
 	function msgSubmit_copy($receive)
 	{
 		global $pdo;
-		// 暂无session
-		$receive['u_id'] = 1; 
 		if (strlen($receive['content'])==0) {
 			$ajax['code'] = 0;
 			$ajax['message'] = '不能为空';
