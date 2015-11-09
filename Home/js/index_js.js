@@ -303,11 +303,21 @@ function removeCookie(name)
 }
 
 oShadown_bg.onclick=function(){
+
 	oShadown_bg.style.display='none';
 }
-lgn.onclick=function(){
-	return false;
+lgn.onclick=function(e){
+	console.log(e);
+	stopEventBubble(e);
 }
 
-
+function stopEventBubble(event){
+        var e=event || window.event;
+        if (e && e.stopPropagation){
+            e.stopPropagation();    
+        }
+        else{
+            e.cancelBubble=true;
+        }
+    }
 }
