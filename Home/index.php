@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="css/clock.css" type="text/css"  />
   <style type="text/css" id="css"></style>
 
+	<?php
+		$dbc = mysqli_connect('localhost','root','','geekstudio') or die("Error connecting to MySQL server.");
+		mysqli_set_charset($dbc,'utf8');
+	?>
  </head>
  <body>
 
@@ -52,37 +56,75 @@
 		<ul id="ul_info">
 			<li>
 				<div class="hot_info">
-					<a href=""></a>
-					<div class="hot_title">Title</div>
+					<a href='http://localhost/webPageGame/Home/article.php?id=1'"></a>
+					<div  style="font-size:25px;"class="hot_title">
+						<?php
+							$query = "SELECT * FROM article WHERE id=1";	
+							$result = mysqli_query($dbc,$query);
+							$row = mysqli_fetch_array($result);
+							echo "$row[title]";
+						?>
+					</div>
 					<img src="images/hot1.png"/>
 					<div class="hot_content"><span>学习无疑是程序员最为重要的素质之一，尤其是互联网这种日新月异的行业，把学习当做工作的一大半也不为过。</span></div>
 				</div>
 			</li>
 			<li><div class="hot_info">
-					<a href=""></a>
-					<div class="hot_title">Title</div>
+					<a href='http://localhost/webPageGame/Home/article.php?id=2'"></a>
+					<div  style="font-size:25px; "class="hot_title">
+						<?php
+							$query = "SELECT * FROM article WHERE id=2";	
+							$result = mysqli_query($dbc,$query);
+							$row = mysqli_fetch_array($result);
+							echo "$row[title]";
+						?>	
+
+					</div>
 					<img src="images/hot1.png"/>
 					<div class="hot_content"><span>学习无疑是程序员最为重要的素质之一，尤其是互联网这种日新月异的行业，把学习当做工作的一大半也不为过。</span></div	>
 				</div></li>
 			<li><div class="hot_info">
-					<a href=""></a>
-					<div class="hot_title">Title</div>
+					<a href='http://localhost/webPageGame/Home/article.php?id=3'"></a>
+					<div  style="font-size:25px;"class="hot_title">
+						<?php
+							$query = "SELECT * FROM article WHERE id=3";	
+							$result = mysqli_query($dbc,$query);
+							$row = mysqli_fetch_array($result);
+							echo "$row[title]";
+						?>
+					</div>
 					<img src="images/hot1.png"/>
 					<div class="hot_content"><span>学习无疑是程序员最为重要的素质之一，尤其是互联网这种日新月异的行业，把学习当做工作的一大半也不为过。</span></div>
 				</div></li>
 		</ul>
 	</div>
 </div>
+
 <!-- 这个是用来放资源和文章用的 -->
 <div class="res_wrap">
-	<div id="res_left">资源（选项卡）</div>
+	<div id="res_left" style="font-size:30px;">此功能未实现</div>
 	<div id="res_right">
-	<div id="essay_title">&nbsp&nbsp精选文章列表（HOT）</div>
+	<div id="essay_title">&nbsp&nbsp精选文章列表（HOT）<a href="article_list.php" style="text-decoration:none;font-size:20px;float:right;padding-right:10px;">更多文章</a></div>
+	<?php
+
+		$dbc = mysqli_connect('localhost','root','','geekstudio') or die("Error connecting to MySQL server.");
+		mysqli_set_charset($dbc,'utf8');
+		$query = "SELECT * FROM article order by id limit 0,8";
+		$result = mysqli_query($dbc,$query);
+
+		while ($row = mysqli_fetch_array($result)) {
+			echo "<a href='http://localhost/webPageGame/Home/article.php?id=$row[id]' 
+			style='text-decoration: none;font-size:25px;margin:18px;color:black;display:inline-block;height:7px;'>$row[title]</a><br/>";
+		}
+
+	?>
 	</div>
 </div>
 
 <div class="time_wrap">
-	<div id="div1"></div>
+	<div id="div1">
+		
+	</div>
 </div>
 
 <div class="footer">

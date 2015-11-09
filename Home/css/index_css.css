@@ -1,3 +1,4 @@
+
 *{margin:0;padding:0}
 /* =========这个是导航========== */
 #header{
@@ -182,13 +183,13 @@
 	width:100%;
 	height:530px;
 	margin:0 auto;
-	background:#ccc;
+	background:none;
 }
 /* =======这个是HOT信息 ======*/
 .hot_info{
 	width:100%;
 	height:450px;
-	background:#ccc;
+	background:#eef1f2;;
 	margin-top:20px;
 }
 .hot_info_wrap{
@@ -216,7 +217,7 @@
 	margin:0 auto;
 	border-radius:7px;
 	margin-top:3%;
-	background:red;
+	background:none;
 	position:relative;
 	box-shadow: 3px 3px 5px #888888;
 }
@@ -231,7 +232,7 @@
 #ul_info li .hot_info .hot_title{
 	width:100%;
 	height:15%;
-	background:rgba(0,0,0,0.5);
+	background:rgba(225,225,22,0.2);
 	border-radius:7px 7px 0px 0px;
 }
 #ul_info li .hot_info img{
@@ -244,7 +245,7 @@
 	height:25%;
 	width:100%;
 	text-indent: 2em;
-	background:rgba(0,0,0,0.5);
+	background:rgba(225,225,22,0.2);
 	border-radius:0px 0px 7px 7px;
 	
 }
@@ -263,14 +264,14 @@
 .res_wrap{
 	width:100%;
 	height:450px;
-	background:rgba(0,0,0,0.2);
+	/*background:rgba(0,0,0,0.2);*/
 	margin-top:20px;
 }
 #res_left{
 	width:40%;
 	height:100%;
 	margin-left:10%;
-	background:rgba(255,0,0,0.2);
+	background:#eef1f2;;
 	float:left;
 }
 #res_right{
@@ -278,7 +279,7 @@
 	width:35%;
 	height:100%;
 	margin-right:10%;
-	background:rgba(255,0,0,0.2);
+	background:#eef1f2;;
 	float:right;
 	border-radius:7px;
 }
@@ -289,26 +290,29 @@
 	line-height:60px;
 	
 	border-radius:7px 7px 0px 0px;
-	background:#99ff99;
+	background:#ccf;
 	font-size:30px;
 	font-family:Microsoft Yahei;
 	font-weight:bold;
 
 }
+#res_right a{
 
+	font-family:Microsoft Yahei;
+}
 
 /* 这个是时间 */
 .time_wrap{
 	width:100%;
 	height:250px;
-	background:#339900;
+	background:#eef1f2;
 	margin-top:20px;
 }
 /* 这个是页脚 */
 .footer{
 	width:100%;
 	height:80px;
-	background:#ccc;
+	background:none;
 	margin-top:20px;
 	text-align:center;
 	padding-top:20px;
@@ -414,8 +418,3 @@
 	box-shadow: 2px 2px 5px #fff;
 	cursor:pointer;
 }
-
-
-
-
-

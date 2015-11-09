@@ -113,9 +113,9 @@ var oLtime = function login_time(){
 		oShadown_bg.style.display="none";
 	}
 	oLogin_btn.onclick=function(){
-
-		var str_user_name = user_name.value;
+var str_user_name = user_name.value;
 		var str_user_password = user_password.value;
+
 		ajax({
 		method : 'post',
 		url : 'http://localhost/webPageGame/Home/user_login.php',
@@ -128,8 +128,6 @@ var oLtime = function login_time(){
 				if(data.code==1){
 					var msg = document.getElementById('message');
 					var text_login = document.getElementById('text_login');
-
-
 					msg.innerHTML=data.message;
 					setTimeout(oLtime,2000);
 					text_login.innerHTML = data.nick+"你好!";
@@ -302,11 +300,26 @@ function removeCookie(name)
 	setCookie(name, 1, -1);
 }
 
+
+
+
 oShadown_bg.onclick=function(){
+
 	oShadown_bg.style.display='none';
 }
-lgn.onclick=function(){
-	return false;
+lgn.onclick=function(e){
+	console.log(e);
+	stopEventBubble(e);
+}
+
+function stopEventBubble(event){
+    var e=event || window.event;
+    if (e && e.stopPropagation){
+        e.stopPropagation();    
+    }
+    else{
+        e.cancelBubble=true;
+    }
 }
 
 

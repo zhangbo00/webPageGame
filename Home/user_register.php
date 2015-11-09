@@ -1,21 +1,17 @@
 <?php
+	echo "<meta charset='UTF-8'>";
 	$nick=$_POST['nick'];															//昵称（nick）
 	$password=$_POST['password'];											//密码（password）
 	$confirm_password=$_POST['confirm_password'];			//确认密码（confirm_password）
 	$email=$_POST['email'];														//电子邮箱（email）	
-	$mobiel=$_POST['mobiel'];													//手机号（mobile）
+	$mobiel=$_POST['mobiel'];	
+													//手机号（mobile）
 	$head_img=$_FILES['head_img'];
-    var_dump($head_img);
-	echo $head_img['tmp_name'];
-	
+	$img_name = $head_img['name'];
+	define('UPLODEPATH', 'D:/wamp/www/webPageGame/public/head_imgs/');
+	$new_path=UPLODEPATH.$img_name;
 
-/*	if(empty($head_img)){
-		echo "true";
-	}else{
-		echo "false";
-	}*/
-
-	/*define('UPLODEPATH', '../public/head_img');
+	$old_path = $head_img['tmp_name'];
 
 	check();
 //PHP验证注册信息
@@ -66,53 +62,54 @@ function check(){
 	insertData();
 }
 
-
 function insertData(){
 	global $nick;
 	global $password;
 	global $confirm_password;
 	global $email;
 	global $mobiel;
-	$dbc = mysqli_connect('localhost','root','','geekstudio') or die("Error connecting to MySQL server.");
-	
 
-	if (!empty($head_img)) {
-	$path = UPLODEPATH.$head_img;
-		if(move_uploaded_file($_FILES['head_img']['tmp_name'],$path)){
-			$query = "SELECT * FROM user WHERE email='$email' or nick='$nick'";
-			echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-		}
-	}else{
-		$query = "SELECT * FROM user WHERE email='$email' or nick='$nick'";
-	}
+	global $img_name;
+	global $new_path;
+	global $old_path;
+
+	$dbc = mysqli_connect('localhost','root','','geekstudio') or die("Error connecting to MySQL server.");
+	mysqli_set_charset($dbc,'utf8');
 	$query = "SELECT * FROM user WHERE email='$email' or nick='$nick'";
 	$result = mysqli_query($dbc,$query);
 	if($result->num_rows>=1){
 		echo "	<span style='font-size:70px;display:block;text-align:center;margin-top:20%;'>注册失败，邮箱或昵称已存在！ $nick</span>";
 	}else{
-	$query = "INSERT INTO user (nick,pass,email,mobile) VALUES('$nick',SHA('$password'),'$email','$mobiel')";
-	$data = mysqli_query($dbc,$query);
-	mysqli_close($dbc);
+		if (!empty($img_name)) {
+			if(move_uploaded_file($old_path,$new_path)){
+				$query = "INSERT INTO user (nick,pass,head_img,email,mobile) VALUES('$nick',SHA('$password'),'$img_name','$email','$mobiel')";
+			}
+		}else{
+			$query = "INSERT INTO user (nick,pass,email,mobile) VALUES('$nick',SHA('$password'),'$email','$mobiel')";
+		}
+		$query = "INSERT INTO user (nick,pass,email,mobile) VALUES('$nick',SHA('$password'),'$email','$mobiel')";
+		$data = mysqli_query($dbc,$query);
+		mysqli_close($dbc);
 
-	echo "	<span style='font-size:70px;display:block;text-align:center;margin-top:20%;'>注册成功，欢迎您！ $nick</span>";
-	echo " <span id='showbox' style='font-size:15px;display:block;text-align:center;margin-top:20%;'></span>";
-	$a = "
-		<script type='text/javascript'>
-			var timeout = 4;
-				var Clock = function show(){
-				var showbox = document.getElementById('showbox');
-				showbox.innerHTML='距离页面关闭还有'+timeout+'秒！';
-				timeout--;
-					if (timeout == 0) {
-					window.close();
+		echo "	<span style='font-size:70px;display:block;text-align:center;margin-top:20%;'>注册成功，欢迎您！ $nick</span>";
+		echo " <span id='showbox' style='font-size:15px;display:block;text-align:center;margin-top:20%;'></span>";
+		$a = "
+			<script type='text/javascript'>
+				var timeout = 4;
+					var Clock = function show(){
+					var showbox = document.getElementById('showbox');
+					showbox.innerHTML='距离页面关闭还有'+timeout+'秒！';
+					timeout--;
+						if (timeout == 0) {
+						window.close();
+						}
 					}
-				}
-			setInterval(Clock, 1000);
-		</script>
-	";}
-	//echo $a;
+				setInterval(Clock, 1000);
+			</script>
+		";}
+		echo $a;
 	
-}*/
+}
 
 	
 ?>

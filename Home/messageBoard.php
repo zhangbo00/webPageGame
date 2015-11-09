@@ -28,10 +28,10 @@
 					foreach ($result['messages'] as $key => $value) {
 						$html.='<div class="message_item panel panel-default" message-id='.$value['id'].'>';
 							$html.='<div class="message_info panel-heading">';
-								$html.=$value['nick'].'<img class=head_img src'.$value['head_img'].'>'.date('y-m-d h:i',$value['time']);
+								$html.=$value['nick'].'<img class=head_img src'.$value['head_img'].'><span style="float:right;">'.date('y-m-d h:i',$value['time'])."</span>";
 							$html.='</div>';
 							$html.='<div class="reply panel-body">';
-								$html.='<xmp class=content>body'.$value['content'].':'.$value['root'].'</xmp>';
+								$html.='<xmp class=content>'.$value['content'].'</xmp>';
 								$html.='<button type="button" class="reply btn btn-default">回复</button>';
 								$html.='<div class="reply_content">';
 									$html.='<textarea></textarea>';
@@ -45,7 +45,7 @@
 									$i = 0;
 									foreach ($anwser['messages'] as $key => $item) {
 										$html.='<li class="list-group-item">';
-										$html.=$item['nick'].'<xmp>'.$item['content'].'</xmp>:'.$item['root'].'time:'.date('y-m-d h:i',$value['time']);
+										$html.=$item['nick'].':<xmp"><br/>&nbsp&nbsp&nbsp'.$item['content'].'<br/></xmp><span style="font-size:15px">Data:'.date('y-m-d h:i',$value['time'])."</span>";
 										$html.='<button type="button" class="reply btn btn-default">回复</button>';
 										$html.='<div class="reply_content">';
 											$html.='<textarea></textarea>';

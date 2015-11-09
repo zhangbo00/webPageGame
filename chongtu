@@ -41,6 +41,7 @@
 		$select = 'u.account,u.nick,u.head_img,u.email,m.id,m.content,m.time from user as u left join message as m on u.id = m.u_id '.$where.' order by m.time desc';
 		$page_result = $page->show_page_result($select);
 		$show_page = $page->show_page();
+		var_dump($show_page);
 		if ($page_result) {
 			$html = '';
 			$html = '<div class="data">';
@@ -69,9 +70,6 @@
 			$html .= '</div>';
 			$html .= $show_page;
 			echo $html;
-		}
-		else {
-			
 		}
 	?>
 	</div>

@@ -27,6 +27,7 @@
 					require_once('public/Page.class.php');
 					$message_rs = $pdo->query('select u.account,u.nick,u.head_img,u.email,m.id,m.content,m.time from user as u  left join message as m on u.id = m.u_id where m.id='.$_GET['id'].' and m.status=1');
 					$message = $message_rs->fetch();
+					var_dump($message);
 					$count_query = $pdo->query('select count(*) as count from message as m left join user as u on m.u_id = u.id where root='.$_GET['id'].' and m.status=1');
 					$count = $count_query->fetch();
 					$page = new Page(10,$count['count']);

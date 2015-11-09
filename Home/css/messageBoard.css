@@ -1,6 +1,7 @@
 .main{
 	width: 100%;
-	background: #fcc;
+	background: rgba(0,0,150,0.5);
+	padding-top: 10px;
 }
 .reply_content{
 	display: none;
@@ -11,5 +12,23 @@
 	height: 50px;
 }
 .list-group-item{
-	padding: 10px 60px !important;
+	padding: 10px 15px  10px 60px !important;
+	font-size: 20px;
+}
+.reply.btn.btn-default{
+	float: right;
+}
+.reply.panel-body{
+
+	font-size: 30px;
+	font-family: Microsoft Yahei;
+}
+
+.message_info.panel-heading{
+
+	font-size: 20px;
+
+}
+nav{
+	text-align: right;
 }
