@@ -9,10 +9,6 @@
 				<li><a href="">查询</a></li>
 
 				<li><h3>留言板管理</h3></li>
-<<<<<<< HEAD
-
-=======
->>>>>>> tmp
 				<li><a href="messageBoard.php">管理</a></li>
 
 				<li><h3>相册</h3></li>

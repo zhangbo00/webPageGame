@@ -314,7 +314,6 @@ oShadown_bg.onclick=function(){
 lgn.onclick=function(e){
 	console.log(e);
 	stopEventBubble(e);
-<<<<<<< HEAD
 }
 
 function stopEventBubble(event){
@@ -325,8 +324,7 @@ function stopEventBubble(event){
     else{
         e.cancelBubble=true;
     }
-=======
->>>>>>> tmp
+
 }
 
 function stopEventBubble(event){
